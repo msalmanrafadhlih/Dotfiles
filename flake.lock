@@ -70,11 +70,11 @@
         "zjstatus": "zjstatus"
       },
       "locked": {
-        "lastModified": 1770827831,
-        "narHash": "sha256-StZ1jccV06s+UjXr2Tj7mOxa1cbyf7ZKqggRxrJOB2k=",
+        "lastModified": 1770945965,
+        "narHash": "sha256-D7E3cQ13rHX5mjepwCZ7PzSxVFp+mtGJerqiuMDfeHQ=",
         "owner": "msalmanrafadhlih",
         "repo": "dotfiles",
-        "rev": "06e2b3f1dd68cb3ba598a71a948b90b4c55d638e",
+        "rev": "3c22a66669223fcfa62ef3db2e36548c43bf42fe",
         "type": "github"
       },
       "original": {
@@ -291,11 +291,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1770562336,
-        "narHash": "sha256-ub1gpAONMFsT/GU2hV6ZWJjur8rJ6kKxdm9IlCT0j84=",
+        "lastModified": 1770841267,
+        "narHash": "sha256-9xejG0KoqsoKEGp2kVbXRlEYtFFcDTHjidiuX8hGO44=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d6c71932130818840fc8fe9509cf50be8c64634f",
+        "rev": "ec7c70d12ce2fc37cb92aff673dcdca89d187bae",
         "type": "github"
       },
       "original": {

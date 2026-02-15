@@ -1,8 +1,57 @@
 <samp>
-<div align="center">
+
+About
+====
+<p align="justify">
+  Manajemen hidup itu penting, seperti sistem operasi, tidak seharusnya berjalan secara acak. Ia perlu dideklarasikan. NixOS mengajarkan bahwa sistem terbaik bukanlah yang paling sering diubah, melainkan yang dibangun dari konfigurasi yang jelas, sadar, dan dapat direproduksi. Tidak ada perubahan impulsif. Tidak ada dependensi tersembunyi. Tidak ada kekacauan yang tak terlacak.
   
-  ![frieren-kuru-kuru](https://github.com/user-attachments/assets/bf845fed-f90f-442e-89ae-9121c8b2e8a4)
-</div>
+  <h4 align="center">
+    "This is not just a NixOs configs. This is a declaration of how I choose to structure chaos into order — reproducible, intentional, and versioned."
+  </h4>
+</p>  
+
+<p align="justify">  
+  Ia adalah refleksi dari filosofi hidup: <br>
+  bahwa segala sesuatu seharusnya memiliki struktur, versi, dan arah. Seperti NixOS dengan generations dan rollback, hidup pun seharusnya memberi ruang untuk evaluasi dan perbaikan — tanpa kehilangan stabilitas. Kita tidak menghapus masa lalu; kita menyimpannya sebagai referensi untuk membangun versi yang lebih baik. Manajemen hidup adalah deklarasi nilai. Konfigurasi adalah manifestasi kesadaran. Dan stabilitas adalah hasil dari disiplin yang konsisten.
+</p>
+
+<p align="center">
+  This system is configured.
+  So is the life behind it.
+</p>
+
+Structures
+===
+```mermaid
+graph LR
+    M["🌟 Repo : Main Branch"]
+    M --> SYSTEMS["📦 NixOs Configurations"] --> SYSMODULES["Modules"]
+    M --> FLAKE["🚀 Flake.nix"]
+
+    FLAKE --> OVERLAYS["🔧 Overlays"]
+    FLAKE --> DOTS["🐧 Dotfiles"]
+
+    DOTS -.-> BSPWM["👾 Branch : bspwm"]
+    DOTS -.-> HYPRLAND["♨️ Branch : Hyprland"]
+    DOTS -.-> NIRI["🍥 Branch : Niri"]
+
+    OVERLAYS --> PLYMOUTH["🍎 Bloodrage-Plymouth"]
+    OVERLAYS --> SUCKLESS[">_ Suckless Terminal"]
+
+    BSPWM --> SYSMODULES
+    HYPRLAND --> SYSMODULES
+    NIRI --> SYSMODULES
+    
+    classDef configNode fill:#A0C981,stroke:#303446,stroke-width:2px,color:#303446
+    classDef moduleNode fill:#D48AEA,stroke:#303446,stroke-width:2px,color:#303446  
+    classDef appNode fill:#6CB6EB,stroke:#303446,stroke-width:2px,color:#303446
+    classDef dataNode fill:#EF9F76,stroke:#303446,stroke-width:2px,color:#303446
+    
+    class F,CONFIGS,DARWIN,HOME,NIXOS configNode
+    class MODULES,CROSS,DARWINMOD,HOMEMOD,NIXOSMOD,FLAKEMOD,OVERLAYS moduleNode
+    class PLYMOUTH,SUCKLESS appNode
+    class DATA,M1,M2,M3,NOTES,SECRETS dataNode
+```
 
 <br>
 

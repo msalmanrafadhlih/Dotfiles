@@ -5,14 +5,18 @@
 # ---------------------------------------------------------  Reload sxhkd
 super + l
 	rofi -show tmux -modi "tmux:~/.local/bin/tmux-sessions.sh"
+
 super + grave
     pkill -USR1 -x sxhkd && dunstify -r 1234 -t 1000 "sxhkd" "Reloaded ✅"
+
 # ---------------------------------------------------------  Refresh bspwm
 ctrl + super + alt + Return
 	bspc wm -r
+
 # ---------------------------------------------------------  Btop++
 super + alt + b
     st -e btop -c btop
+
 # ---------------------------------------------------------  Powermenu
 super + Escape
 	~/.config/rofi/scripts/powermenu-t4.sh
@@ -35,16 +39,13 @@ super + c
     code -n
 # ---------------------------------------------------------  Open Discord
 super + d
-	vesktop
+	gamemoderun vesktop
 # ---------------------------------------------------------  Thunar
 super + e
-	thunar ~/.repos/nixos
+	thunar ~/.dotfiles
 # ------o--------------------------------------------------  thunar
 super + f
 	thunar
-# ------o--------------------------------------------------  Geany
-super + g
-	geany
 # ---------------------------------------------------------  Helix
 super + h
 	kdocker -f -q kitty --class=Terminalnvim -e hx
@@ -69,6 +70,9 @@ super + q
 # ---------------------------------------------------------  Yazi
 super + y
 	kitty --class=YaziTerm -e yazi
+# ------o--------------------------------------------------  Zed Editor
+super + z
+	zeditor
 ###########################################################
 # ---------------------- Workspaces --------------------- #
 ###########################################################

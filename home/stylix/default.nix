@@ -19,12 +19,16 @@
     # a warning will be printed when the user configuration is being built.    
     enableReleaseChecks = true;
 
-    polarity = "dark"; # "either","dark","light"
+    polarity = "either"; # "either","dark","light"
 
     imageScalingMode = "fill"; # stretch, fill, fit, center, tile
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/msalmanrafadhlih/Dotfiles/refs/heads/bspwm/home/Assets/Wallpaper/wallpaper8.jpeg";
+    #   hash = "sha256-VZp1wy2N0GApt48ILRY+pIAhAjCt02GmqmxHRTWAEoA=";
+    # };
     image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/msalmanrafadhlih/Dotfiles/refs/heads/bspwm/home/Assets/Wallpaper/wallpaper8.jpeg";
-      hash = "sha256-VZp1wy2N0GApt48ILRY+pIAhAjCt02GmqmxHRTWAEoA=";
+      url = "https://raw.githubusercontent.com/msalmanrafadhlih/Dotfiles/refs/heads/bspwm/home/Assets/Wallpaper/wallpaper11.jpg";
+      hash = "sha256-SToNXY0LihjfCsfqgkzXfAT8B19t/HY48TrqfwgoiJc=";
     };
 
     ## A scheme following the base16 standard.
@@ -37,13 +41,13 @@
     # Opacity Default = 1.0
     opacity = {
       # The opacity of the windows of applications,
-      applications = 0.8;
+      applications = 1.0;
       # The opacity of the windows of bars/widgets,
-      desktop = 0.8;
+      desktop = 1.0;
       # The opacity of the windows of notifications/popups,
-      popups = 0.8;
+      popups = 1.0;
       # The opacity of the windows of terminals,
-      terminal = 0.8;
+      terminal = 1.0;
     };
 
     ## Attributes defining the systemwide cursor.

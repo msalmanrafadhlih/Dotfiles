@@ -14,6 +14,8 @@ line-number = "relative"
 bufferline = "multiple"
 color-modes = true
 end-of-line-diagnostics = "hint"
+mouse = true
+middle-click-paste = true
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
@@ -30,18 +32,25 @@ display-inlay-hints = true
 left = ["mode", "spinner", "file-name", "file-type", "total-line-numbers", "file-encoding"]
 center = []
 right = ["selections", "primary-selection-length", "position", "position-percentage", "spacer", "diagnostics", "workspace-diagnostics", "version-control"]
- 
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.file-picker]
+hidden = false
+ignore = false
+git-ignore = false
 
 [editor.soft-wrap]
 enable = false
  
 [keys.insert]
 f = { j = "normal_mode" } # Maps "fj" to exit insert mode
-j = { f = "normal_mode" } # Maps "fj" to exit insert mode
+j = { f = "normal_mode" } # Maps "jf" to exit insert mode
+J = { F = "normal_mode" } # Maps "FJ" to exit insert mode
+F = { J = "normal_mode" } # Maps "JF" to exit insert mode
 
 [keys.normal]
 "}" = "goto_next_paragraph"
@@ -50,7 +59,18 @@ j = { f = "normal_mode" } # Maps "fj" to exit insert mode
 [keys.select]
 "}" = "goto_next_paragraph"
 "{" = "goto_prev_paragraph"
+# "y" = "clipboard_yank"
+# "Y" = "clipboard_yank_join"
+# "P" = "clipboard_paste_before"
+# "p" = "clipboard_paste_after"
 
+[keys.normal.space]
+"x" = ":write-quit"
+"q" = ":quit"
+"W" = ":write"
 
-
+[keys.normal.space.l]
+a = ":set line-number absolute" 
+r = ":set line-number relative" 
+n = ":set line-number none" 
 

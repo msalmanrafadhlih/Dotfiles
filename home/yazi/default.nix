@@ -3,6 +3,7 @@
 
   programs.yazi = {
     enable = true;
+    shellWrapperNmae = "y";
 
     plugins = with pkgs.yaziPlugins; {
       full-border = full-border;

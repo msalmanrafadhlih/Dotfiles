@@ -51,7 +51,6 @@
     nixosModules.default = { username, hostname, system, ... }: {
       imports = [
       home-manager.nixosModules.home-manager
-      inputs.stylix.nixosModules.stylix
       ###################################
       ## 🧩 Overlays & External Modules
       ###################################

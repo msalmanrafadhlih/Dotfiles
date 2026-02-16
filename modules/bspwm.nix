@@ -124,34 +124,4 @@
     auto-optimise-store = true;
     warn-dirty = false;
   };
-  #####################################
-  ## ⚡ Stylix Color Sheets
-  #####################################
-  stylix = {
-    enable = true;
-    image = pkgs.fetchurl {
-    	url = "https://raw.githubusercontent.com/msalmanrafadhlih/Dotfiles/refs/heads/bspwm/home/Assets/Wallpaper/wallpaper8.jpeg";
-    	hash = "sha256-VZp1wy2N0GApt48ILRY+pIAhAjCt02GmqmxHRTWAEoA=";
-    };
-    polarity = "dark"; # Memaksa mode gelap agar warna merahnya tidak menyilaukan
-  
-    # # Pilih font yang cocok dengan estetika tajam wallpaper ini
-    # fonts = {
-    #   monospace = {
-    #     package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
-    #     name = "JetBrainsMono Nerd Font";
-    #   };
-    # };
-
-    # Target aplikasi yang ingin kamu sinkronkan
-    targets = {
-      bspwm.enable = true;
-      helix.enable = true;
-      zellij.enable = true;
-      yazi.enable = true;
-      lazygit.enable = true;
-      gtk.enable = true; # Untuk Thunar, Geany, dll
-      firefox.enable = true;
-    };
-  };
 }

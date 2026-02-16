@@ -8,6 +8,10 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     textfox.url = "github:adriankarlen/textfox";
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nur = {
       url = "github:nix-community/NUR";
@@ -47,6 +51,7 @@
     nixosModules.default = { username, hostname, system, ... }: {
       imports = [
       home-manager.nixosModules.home-manager
+      inputs.stylix.nixosModules.stylix
       ###################################
       ## 🧩 Overlays & External Modules
       ###################################

@@ -4,7 +4,7 @@
   NIXOS = "cd ~/.dotfiles/system && ls";
   HOME = "cd ~/.dotfiles/$XDG_CURRENT_DESKTOP && ls";
 
-  SAVEFLAKE = "nix flake update ~/.dotfiles/system --commit-lock-file && sudo nixos-rebuild switch --flake ~/.dotfiles/system#nixos";
+  SAVEFLAKE = "cd ~/.dotfiles/system && nix flake update --commit-lock-file && sudo nixos-rebuild switch --flake .#nixos";
 
   RUNNING = "systemctl --user list-units --state=running";
   SYSRUNNING = "systemctl list-units --state=running";

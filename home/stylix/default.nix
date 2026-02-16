@@ -19,7 +19,7 @@
     # a warning will be printed when the user configuration is being built.    
     enableReleaseChecks = true;
 
-    polarity = "either"; # "either","dark","light"
+    polarity = "dark"; # "either","dark","light"
 
     imageScalingMode = "fill"; # stretch, fill, fit, center, tile
     image = pkgs.fetchurl {

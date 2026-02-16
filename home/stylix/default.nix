@@ -19,17 +19,17 @@
     # a warning will be printed when the user configuration is being built.    
     enableReleaseChecks = true;
 
-    polarity = "either"; # "either","dark","light"
+    polarity = "light"; # "either","dark","light"
 
     imageScalingMode = "fill"; # stretch, fill, fit, center, tile
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/msalmanrafadhlih/Dotfiles/refs/heads/bspwm/home/Assets/Wallpaper/wallpaper8.jpeg";
-    #   hash = "sha256-VZp1wy2N0GApt48ILRY+pIAhAjCt02GmqmxHRTWAEoA=";
-    # };
     image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/msalmanrafadhlih/Dotfiles/refs/heads/bspwm/home/Assets/Wallpaper/wallpaper11.jpg";
-      hash = "sha256-SToNXY0LihjfCsfqgkzXfAT8B19t/HY48TrqfwgoiJc=";
+      url = "https://raw.githubusercontent.com/msalmanrafadhlih/Dotfiles/refs/heads/bspwm/home/Assets/Wallpaper/wallpaper8.jpeg";
+      hash = "sha256-VZp1wy2N0GApt48ILRY+pIAhAjCt02GmqmxHRTWAEoA=";
     };
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/msalmanrafadhlih/Dotfiles/refs/heads/bspwm/home/Assets/Wallpaper/wallpaper11.jpg";
+    #   hash = "sha256-SToNXY0LihjfCsfqgkzXfAT8B19t/HY48TrqfwgoiJc=";
+    # };
 
     ## A scheme following the base16 standard.
     ## Default : Automatically selected from the background image.

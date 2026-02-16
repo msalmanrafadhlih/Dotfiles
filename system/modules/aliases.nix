@@ -3,6 +3,9 @@
   tquilla = "colorscript -r";
   NIXOS = "cd ~/.dotfiles/system && ls";
   HOME = "cd ~/.dotfiles/$XDG_CURRENT_DESKTOP && ls";
+
+  SAVEFLAKE = "nix flake update ~/.dotfiles/system --commit-lock-file && sudo nixos-rebuild switch --flake ~/.dotfiles/system#nixos";
+
   RUNNING = "systemctl --user list-units --state=running";
   SYSRUNNING = "systemctl list-units --state=running";
   USAGELOG = "sudo journalctl --disk-usage";
@@ -66,8 +69,6 @@
   ##  OTHER
   BASHSAVE = "source ~/.bashrc && dunstify 'BASHRC saved'";
   ZSHSAVE = "source ~/.zshrc && dunstify 'ZSHRC saved'";
-  UPDT = "nix flake update";
-  SAVEFLAKE = "sudo nixos-rebuild switch --flake ~/.dotfiles/system#nixos";
 
   OLD = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
   GBGOLD = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +3";

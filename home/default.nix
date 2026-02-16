@@ -18,7 +18,7 @@
   # ./rofi
   ./serpl
   ./shell
-  ./stylix
+  # ./stylix
   # ./starship
   # ./thunderbird
   # ./virtmanager

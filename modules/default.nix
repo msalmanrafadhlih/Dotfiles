@@ -60,7 +60,7 @@ in
 	  ./xyz.nix
 	  ./youtube.nix  
 
-	  inputs.stylix.homeModules.stylix
+	  # inputs.stylix.homeModules.stylix
 		inputs.catppuccin.homeModules.catppuccin
   ]; 
 }

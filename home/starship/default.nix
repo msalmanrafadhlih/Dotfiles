@@ -6,12 +6,10 @@
     settings = {
       # Palette dihapus agar Stylix bisa mengambil kendali penuh
 
-      format =
-        "[ ](bold blue) [$username](bold magenta)"
+      format =''[ ](bold blue) [$username](bold magenta)''
         + "\${custom.dir_icon}"
-        + ''
-          [$directory](bold yellow) $git_branch$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
-                  $character'';
+        + ''[$directory](bold yellow) $git_branch$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
+          $character'';
 
       username = {
         show_always = true;
@@ -74,12 +72,12 @@
       git_branch = {
         symbol = " ";
         style = "bold purple";
-        format = "[git-](bold yellow)[\\[](bold yellow)[$symbol$branch $git_status $git_state]($style)[\\]-](bold yellow) ";
+        format = "[git-](bold yellow)[\\[](bold yellow)[$symbol$branch$git_status$git_state]($style)[\\]-](bold yellow) ";
       };
 
       git_status = {
         style = "bold purple";
-        format = "([\\[$all_status$ahead_behind\\]]($style) )";
+        format = "([ \\[$all_status$ahead_behind\\]]($style) )";
         stashed = "[\${count}*](green)";
         modified = "[\${count}+](yellow)";
         deleted = "[\${count}-](red)";
@@ -92,7 +90,7 @@
 
       git_state = {
         style = "bold purple";
-        format = "[$state( $progress_current/$progress_total) ]($style)";
+        format = "[ $state( $progress_current/$progress_total)]($style)";
       };
 
       # Language Settings

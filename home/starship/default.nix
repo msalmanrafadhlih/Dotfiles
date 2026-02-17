@@ -6,9 +6,8 @@
     settings = {
       # Palette dihapus agar Stylix bisa mengambil kendali penuh
 
-      format =
-"[ ](bold blue) [$username](bold magenta)" + "\${custom.dir_icon}" + ''[$directory](bold yellow) $git_branch$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
-$character'';
+      format ="[ ](bold blue) [$username](bold magenta)" + "\${custom.dir_icon}" + "[$directory](bold yellow) $git_branch$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
+$character";
 
       username = {
         show_always = true;

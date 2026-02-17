@@ -18,11 +18,11 @@
       mode = "no-title no-cwd";
     };
 
-    font = {
-      name = "JetBrainsMono NFM Light";
-      package = pkgs.nerd-fonts.jetbrains-mono;
-      size = 10.5;
-    };
+    # font = {
+    #   name = "JetBrainsMono NFM Light";
+    #   package = pkgs.nerd-fonts.jetbrains-mono;
+    #   size = 10.5;
+    # };
 
     settings = {
       background_opacity = 0.5;

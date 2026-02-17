@@ -122,7 +122,7 @@
 
     #########
     # Icons Theming
-    stylix.icons = {
+    icons = {
       enable = true;
       # Nama di sini harus sesuai dengan nama folder di dalam /share/icons/
       # Biasanya untuk Vimix namanya adalah "Vimix-Ruby" atau "Vimix-Ruby-Dark"

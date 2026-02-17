@@ -29,7 +29,7 @@ let
     }) apps);
 in
 {
-  ".icons" = "Assets/cursors";
+  # ".icons" = "Assets/cursors";
   "Pictures/iconApps" = "Assets/IconApps";
   "Pictures/Wallpaper" = "Assets/Wallpaper";
   ".config/zsh/.nomedia" = "zsh/zcompdump";

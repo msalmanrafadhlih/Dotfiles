@@ -11,8 +11,7 @@
         + "\${custom.dir_icon}"
         + ''
           [$directory](bold yellow) $git_branch$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
-                    $character
-        '';
+                  $character'';
 
       username = {
         show_always = true;

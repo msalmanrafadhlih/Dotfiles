@@ -61,6 +61,5 @@ in
 	  ./youtube.nix  
 
 	  inputs.stylix.homeModules.stylix
-		inputs.catppuccin.homeModules.catppuccin
   ]; 
 }

@@ -3,28 +3,27 @@
  imports = [
   ./bspwm
   # ./btm
-  # ./fastfetch
+  ./fastfetch
   # ./zen-browser
   # ./firefox
   ./zed-editor
   ./gemini
   ./gtk
   ./spotify
-  # ./helix
-  # ./inlyne
-  # ./kitty
+  ./helix
+  ./inlyne # Markdown Viewer
+  ./kitty
   ./lazygit
-  # ./nwg-drawer
+  # ./nwg-drawer # Aplikasi Menu Launcher bergaya drawer
   # ./rofi
-  ./serpl
+  ./serpl # tui find and replace tool, good for integratinng with terminal editors
   ./shell
   ./stylix
-  # ./starship
-  # ./thunderbird
-  # ./virtmanager
+  ./starship # Mengubah tampilan Prompt (shell)
+  ./virtmanager  
   # ./wezterm
   ./yazi
-  # ./zathura
+  # ./zathura # Document Viewer
   # ./yazelix
   # ./zellij
 	# ./bspwm/polybar 

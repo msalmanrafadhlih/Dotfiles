@@ -6,7 +6,7 @@
     enableZshIntegration = true;
 
     settings = {
-      theme = "catppuccin-mocha-lavender";
+      # theme = "catppuccin-mocha-lavender";
       copy_command = "wl-copy";
       mouse_mode = false;
 
@@ -51,7 +51,7 @@
       };
     };
 
-    themes = import ./themes.nix;
+    themes = import ./themes.nix ;
   };
 
   # zellij's auto tab renaming 

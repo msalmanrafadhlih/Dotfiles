@@ -23,10 +23,4 @@
       };
     };
   };
-
-  catppuccin.lazygit = {
-    enable = true;
-    accent = "lavender";
-    flavor = "mocha";
-  };
 }

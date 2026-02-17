@@ -21,17 +21,36 @@
     font = {
       name = "JetBrainsMono NFM Light";
       package = pkgs.nerd-fonts.jetbrains-mono;
-      size = 12;
+      size = 10.5;
     };
 
     settings = {
-      background_opacity = 0.8;
-      placement_strategy = "center";
-      window_padding_width = "4 4";
+      background_opacity = 0.5;
       background_blur = 40;
-      hide_window_decorations = true;
-      enable_audio_bell = false;
+
+      placement_strategy = "center";
+      inactive_text_alpha = 0.6;
+      confirm_os_window_close = 0;
+      tab_bar_style = "powerline";
+
+      window_padding_width = "10";
       window_alert_on_bell = false;
+      window_border_width = "3pt";
+
+      hide_window_decorations = true;
+      draw_minimal_borders = true;
+      enable_audio_bell = false;
+      bell_on_tab = "🔔 ";
+      remember_window_size = false;
+
+      mouse_hide_wait = 0;
+      select_by_word_characters = "@-./_~?&=%+#a";
+      copy_on_select = true;
+
+      cursor_trail = 1;
+      cursor_shape = "block";
+      cursor_stop_blinking_after = 0;
+      scrollback_lines = 2000;
 
       bold_font = "JetBrainsMono NF";
       italic_font = "VictorMono Nerd Font";
@@ -45,7 +64,7 @@
       selection_foreground = "#1E1E2E";
       selection_background = "#F5E0DC";
 
-      # Cursor colors
+      # Cursor
       cursor = "#F5E0DC";
       cursor_text_color = "#1E1E2E";
 

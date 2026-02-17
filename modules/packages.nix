@@ -33,8 +33,6 @@
     # CLI TOOLS
 	  ani-cli
 	  rmpc
-	  kitty
-	  helix
 
     # UTILS
     ffmpeg-full

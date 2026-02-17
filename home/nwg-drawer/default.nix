@@ -1,4 +1,7 @@
+# nwg-drawer, sebuah Application Launcher (menu aplikasi) yang bergaya "drawer"
+# (seperti laci aplikasi di smartphone Android).
 { pkgs, ... }: {
+
   home.packages = with pkgs; [
     nwg-drawer
 

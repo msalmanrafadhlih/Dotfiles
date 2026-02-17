@@ -1,103 +1,101 @@
 {
-  normal = {
-    esc = [ "collapse_selection" "keep_primary_selection" ];
-    "{" = "goto_prev_paragraph";
-    "}" = "goto_next_paragraph";
-    H = "goto_previous_buffer";
-    L = "goto_next_buffer";
+  programs.helix.settings.keys = {
+    # --- INSERT MODE ---
+    insert = {
+      # Keybinding "Mash" untuk keluar ke normal mode dengan cepat (f+j atau j+f)
+      f = { j = "normal_mode"; };
+      j = { f = "normal_mode"; };
+      J = { F = "normal_mode"; };
+      F = { J = "normal_mode"; };
+      
+      # Completion trigger manual
+      "C-space" = "completion";
+    };
 
-    space = {
-      w = ":w";
-      q = ":q";
-      u = "switch_to_lowercase";
-      U = "switch_to_uppercase";
+    # --- NORMAL MODE ---
+    normal = {
+      # Navigasi dasar & Buffer
+      esc = [ "collapse_selection" "keep_primary_selection" ];
+      "{" = "goto_prev_paragraph";
+      "}" = "goto_next_paragraph";
 
-      # yazi-picker script defined in ./scripts.nix
-      space = [
-        # using %% to escape 
-        ''
-          :sh zellij run -n "" -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- yazi-picker open %{buffer_name}''
-        ":redraw"
-      ];
-
-      # Override default change picker
-      g = [
-        ''
-          :sh zellij action new-pane --name "" --floating --width 80%% --height 80%% --x 10%% --y 10%% --close-on-exit -- lazygit''
-        ":redraw"
-      ];
-
-      # serpl is an intutive TUI find and replace tool
-      # I don't know which key would make more sense here. using ";" because it's available and ergonomic
-      ";" = [
-        ''
-          :sh zellij action new-pane --name "" --floating --width 80%% --height 80%% --x 10%% --y 10%% --close-on-exit -- serpl''
-      ];
-
-      # LLM integration
-      # These keybindings launch custom llm-* scripts (defined in ./scripts.nix)
-      # inside floating Zellij panes
-      l = {
-        # chat
-        c = [
-          ''
-            :sh zellij action new-pane --name ""  --floating --width 35%% --height 96%% --x 70%% --y 2%% --close-on-exit -- gemini''
-        ];
-
-        # generate commit message
-        m = [
-          ''
-            :sh zellij action new-pane --name ""  --floating --width 35%% --height 96%% --x 70%% --y 2%% --close-on-exit -- llm-gen-commit-msg''
-        ];
-
-        # explain the codebase
-        e = [
-          ''
-            :sh zellij action new-pane --name ""  --floating --width 35%% --height 96%% --x 70%% --y 2%% --close-on-exit -- llm-explain''
-        ];
-
-        # analyze and suggest improvments
-        a = [
-          ''
-            :sh zellij action new-pane --name ""  --floating --width 35%% --height 96%% --x 70%% --y 2%% --close-on-exit -- llm-do-anal''
-        ];
+      # Integrasi Yazi Picker (Ctrl + y)
+      "C-y" = {
+        y = ":sh zellij run -n \"\" -c -f -x 10% -y 10% --width 80% --height 80% -- yazi-picker open %{buffer_name}";
+        v = ":sh zellij run -n \"\" -c -f -x 10% -y 10% --width 80% --height 80% -- yazi-picker vsplit %{buffer_name}";
+        h = ":sh zellij run -n \"\" -c -f -x 10% -y 10% --width 80% --height 80% -- yazi-picker hsplit %{buffer_name}";
       };
 
-      t = {
-        s = ":toggle-option soft-wrap.enable";
-        u = "switch_case";
+      # Shortcut Select All (m + w)
+      m = { w = "select_all"; };
+
+      # --- SPACE MENU ---
+      space = {
+        # File management standar
+        w = ":write";
+        q = ":quit";
+        x = ":buffer-close"; # Tambahan dari TOML
+        
+        # Text case transformation
+        u = "switch_to_lowercase";
+        U = "switch_to_uppercase";
+
+        # 1. File Picker via Yazi (Space + Space)
+        space = [
+          ":sh zellij run -n \"\" -c -f -x 10% -y 10% --width 80% --height 80% -- yazi-picker open %{buffer_name}"
+          ":redraw"
+        ];
+
+        # 2. Git via Lazygit (Space + g)
+        g = [
+          ":sh zellij action new-pane --name \"\" --floating --width 80% --height 80% --x 10% --y 10% --close-on-exit -- lazygit"
+          ":redraw"
+        ];
+
+        # 3. Search & Replace via Serpl (Space + ;)
+        ";" = [
+          ":sh zellij action new-pane --name \"\" --floating --width 80% --height 80% --x 10% --y 10% --close-on-exit -- serpl"
+        ];
+
+        # 4. LLM / AI Integration (Space + l)
+        # Note: Menggunakan script kustom 'gemini', 'llm-gen-commit-msg', dll.
+        l = {
+          c = [ ":sh zellij action new-pane --name \"\"  --floating --width 35% --height 96% --x 70% --y 2% --close-on-exit -- gemini" ];
+          m = [ ":sh zellij action new-pane --name \"\"  --floating --width 35% --height 96% --x 70% --y 2% --close-on-exit -- llm-gen-commit-msg" ];
+          e = [ ":sh zellij action new-pane --name \"\"  --floating --width 35% --height 96% --x 70% --y 2% --close-on-exit -- llm-explain" ];
+          a = [ ":sh zellij action new-pane --name \"\"  --floating --width 35% --height 96% --x 70% --y 2% --close-on-exit -- llm-do-anal" ];
+        };
+
+        # 5. Line Numbers (Space + n)
+        # DIPINDAHKAN dari 'space.l' karena konflik dengan LLM
+        n = {
+          a = ":set line-number absolute";
+          r = ":set line-number relative";
+          n = ":set line-number none";
+        };
+
+        # 6. Toggles (Space + t)
+        t = {
+          s = ":toggle-option soft-wrap.enable";
+          u = "switch_case";
+        };
       };
     };
 
-    C-y = {
-      y = ''
-        :sh zellij run -n "" -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- yazi-picker open %{buffer_name}'';
-      # Open the file(s) in a vertical split
-      v = ''
-        :sh zellij run -n "" -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- yazi-picker vsplit %{buffer_name}'';
-      # Open the file(s) in a horizontal split
-      h = ''
-        :sh zellij run -n "" -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- yazi-picker hsplit %{buffer_name}'';
+    # --- SELECT MODE ---
+    select = {
+      "{" = "goto_prev_paragraph";
+      "}" = "goto_next_paragraph";
+      m = { w = "select_all"; };
+      
+      space = {
+        u = "switch_to_lowercase";
+        U = "switch_to_uppercase";
+        t = {
+          s = ":toggle-option soft-wrap.enable";
+          u = "switch_case";
+        };
+      };
     };
-
-    m.w = "select_all";
   };
-
-  select = {
-    "{" = "goto_prev_paragraph";
-    "}" = "goto_next_paragraph";
-    space = {
-      u = "switch_to_lowercase";
-      U = "switch_to_uppercase";
-
-      t = {
-        s = ":toggle-option soft-wrap.enable";
-        u = "switch_case";
-      };
-    };
-
-    m.w = "select_all";
-  };
-
-  insert = { C-space = "completion"; };
 }

@@ -20,8 +20,8 @@ in
 	    pointer
 	  ];
 
-	  # theme = spicePkgs.themes.dreary;
-	  # colorScheme = "Psycho";
+	  theme = spicePkgs.themes.dreary;
+	  colorScheme = "Psycho";
   };
 
   services.spotifyd = {

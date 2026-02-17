@@ -30,6 +30,7 @@
     xinput
     pamixer
     xdotool
+    xcolor
   ];
 
   services = {

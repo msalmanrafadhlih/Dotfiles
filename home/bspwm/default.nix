@@ -24,8 +24,7 @@ let
 		# ncmpcpp = "ncmpcpp";
 		fastfetch = "fastfetch";
 		btop = "btop";
-		kitty = "kitty";
-		helix = "helix";
+		nano = "nano";
 		"com.kdocker" = "com.kdocker";
 
 		# "gtk-3.0" = "gtk-3.0";

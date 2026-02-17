@@ -6,29 +6,48 @@
     defaultEditor = true;
 
     settings = {
-      theme = "catppuccin_mocha_transparent";
+      # theme = "catppuccin_mocha_transparent";
       editor = {
+        auto-save = false;
         # scrollPastEnd = true;
         text-width = 80;
+        true-color = true;
+        auto-pairs = true;
+        line-number = "relative";
+
+        mouse = true;
+        middle-click-paste = true;
+
         lsp = {
           display-messages = true;
           display-inlay-hints = true;
         };
-        soft-wrap.enable = false;
 
-        inline-diagnostics.cursor-line = "warning";
+        soft-wrap.enable = false;
+        completion-trigger-line = 1;
+
         end-of-line-diagnostics = "hint";
+        idle-timeout = 50;
 
         popup-border = "all";
         color-modes = true;
 
-        file-picker = { hidden = false; };
+        file-picker = {
+          hidden = false;
+          ignore = false;
+          git-ignore = false;
+        };
+        
         bufferline = "multiple";
+        scroll-lines = 1;
 
+        cursorline = true;
+        inline-diagnostics.cursor-line = "warning";
+        
         cursor-shape = {
           insert = "bar";
           normal = "block";
-          select = "block";
+          select = "underline";
         };
 
         statusline = {
@@ -60,16 +79,17 @@
 
         indent-guides = {
           render = true;
-          character = "▏";
+          character = "·"; # Some characters that work well: " ▏", " ┆ ", " ┊ ", " ⸽" 
+          skip-levels = 1;
         };
       };
 
-      keys = import ./keys.nix;
+      keys = import ./keys.nix ;
     };
 
     languages = import ./language.nix { inherit pkgs; };
 
-    themes = import ./theme.nix;
+    # themes = import ./theme.nix ;
 
     extraPackages = import ./extraPackages.nix { inherit pkgs; };
   };
@@ -109,7 +129,6 @@
   home.packages = with pkgs; [
     nodejs_24
     yarn
-    python314
     uv
     docker-compose
     powershell

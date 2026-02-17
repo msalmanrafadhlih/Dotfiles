@@ -1,12 +1,1 @@
-[Icon Theme]
-Inherits=Kafka
-
-# list Cursor Themes
-# 1. Doro
-# 2. M200
-# 3. Crelly-Cursor-Pack
-# 4. Marci-Crystal
-# 5. Marci-Cursor-Pack
-# 6. PKP
-# 7. Yuurei-Angel
-# 8. Kafka
+/nix/store/4bl80v8yly7jmd6imp6gc3n48s59zfsn-home-manager-files/.icons/default/index.theme

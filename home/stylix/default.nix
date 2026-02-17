@@ -1,4 +1,11 @@
 { pkgs, config, ... }: {
+
+  # Target Applications
+  imports = [
+    # ./gtk.nix
+    ./disable.nix
+  ];
+
   stylix = {
     enable = true;
 
@@ -71,14 +78,23 @@
     ## Attributes defining the systemwide cursor.
     ## Set either all or none of these attributes.
     cursor = {
-      name = "Doro"; # null or string
-      size = 14; # null or integer
-      package = pkgs.fetchFromGitHub {
-        owner = "TQ-See";
-        repo = "Cursors-memes";
-        rev = "main";
-        sha256 = "sha256-wBy9mA3IczaCDtd/RR/WZIep24GEZueYso8p9ELxFrI=";
-      }; # null or package
+      # Ganti nama ini sesuai folder di repo (Doro, Kafka, M200, dll)
+      name = "Doro";
+      size = 24;
+      package = pkgs.runCommand "tq-cursor-collection" { } ''
+        mkdir -p $out/share/icons
+
+        # Ambil semua folder dari root repository
+        # Dan buat symlink ke folder icons sistem
+        ln -s ${
+          pkgs.fetchFromGitHub {
+            owner = "TQ-See";
+            repo = "Cursors-memes";
+            rev = "main";
+            sha256 = "sha256-wBy9mA3IczaCDtd/RR/WZIep24GEZueYso8p9ELxFrI=";
+          }
+        }/* $out/share/icons/
+      '';
     };
 
     ##########
@@ -117,12 +133,10 @@
     # Icons Theming
     icons = {
       enable = true;
-      dark = "Vimix-Ruby"; # null or string
-      light = "Vimix-Ruby";
+      dark = "Ruby"; # null or string
+      light = "Ruby";
       package = pkgs.vimix-icon-theme; # null or package
     };
 
   };
-  # Target Applications
-  imports = [ ./gtk.nix ./disable.nix ];
 }

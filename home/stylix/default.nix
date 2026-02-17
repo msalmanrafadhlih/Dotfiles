@@ -84,7 +84,7 @@
         owner = "TQ-See";
         repo = "Cursors-memes";
         rev = "main";
-        sha256 = "sha256-wBy9mA3IczaCDtd/RR/WZIep24GEZueYso8p9ELxFrI=";
+        sha256 = "";
       }) { };
     };
 

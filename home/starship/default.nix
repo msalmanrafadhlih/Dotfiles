@@ -41,11 +41,11 @@
       };
 
       character = {
-        format = "$symbol ";
+        format = "$symbol";
         vicmd_symbol = "[❮](bold green)";
         disabled = false;
         success_symbol = "[](bold green) ";
-        error_symbol = "[✗](bold red) ";
+        error_symbol = "[](bold red) ";
       };
       status = {
         format = "[]($style)[$symbol]($style)";
@@ -58,8 +58,8 @@
         recognize_signal_code = true;
         signal_symbol = " ⚡";
         style = "bold red";
-        success_symbol = "";
-        symbol = "";
+        success_symbol = " 🟢 SUCCESS ";
+        symbol = "";
         disabled = false;
       };
 

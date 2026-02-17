@@ -4,65 +4,126 @@
     enableBashIntegration = true;
     enableZshIntegration = true;
     settings = {
-      # Baris 1: Icon Nix(Blue) -> User(Magenta) -> DirIcon(Cyan) -> Path(Yellow) -> Git
-      # Baris 2: Character (Green/Red)
-      format = ''
-        [ ](bold blue)[$username](bold magenta) [$directory](bold yellow)$git_branch$git_status$git_state$rust$golang$nodejs$lua$nix_shell$python
-        $character'';
+      # Palette dihapus agar Stylix bisa mengambil kendali penuh
+
+      format =
+        "[ ](bold blue) [$username](bold magenta)"
+        + "\${custom.dir_icon}"
+        + ''
+          [$directory](bold yellow) $git_branch$git_status$git_state$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
+                  $character
+        '';
 
       username = {
         show_always = true;
         style_user = "bold magenta";
-        format = "[$user]($style) ";
-      };
-
-      directory = {
-        # Menggunakan simbol Cyan sebelum path Yellow
-        format =
-          "[ ](bold cyan)[$path]($style)[$read_only]($read_only_style) ";
-        style = "bold yellow";
-        # Starship secara otomatis mengganti $HOME dengan simbol ini
-        home_symbol = "";
-        truncation_length = 3;
-        truncate_to_repo = true;
+        format = "[$user]($style)";
       };
 
       character = {
-        # Identik dengan %(?.%B%F{green}.%F{red}) di Zsh kamu
-        success_symbol = "[](bold green) ";
-        error_symbol = "[](bold red) ";
+        success_symbol = "[❯](bold purple)[❯](bold blue)[❯](bold green)";
+        error_symbol = "[❯❯❯](bold red)";
       };
 
-      # Pembersihan Git agar tetap minimalis (tanpa background)
+      custom.dir_icon = {
+        # Perintah shell yang sama dengan fungsi Zsh kamu
+        command = ''
+          if [ "$PWD" = "$HOME" ]; then
+            echo ""
+          else
+            echo ""
+          fi
+        '';
+        when = "true"; # Selalu muncul
+        style = "bold cyan";
+        format = "[ $output ]($style)";
+      };
+
+      directory = {
+        read_only = " ";
+        home_symbol = " ~";
+        format = "[$path](bg:blue fg:black)[$read_only](bg:blue fg:red)";
+        truncation_length = 15;
+        truncate_to_repo = false;
+      };
+
+      cmd_duration = {
+        min_time = 4;
+        show_milliseconds = false;
+        disabled = false;
+        style = "bold italic cyan";
+        format = "[\\(](bold italic blue)[$duration]($style)[\\)](bold italic blue)";
+      };
+
+      # Icons & Symbols
+      aws.symbol = "  ";
+      conda.symbol = " ";
+      dart.symbol = " ";
+
+      docker_context = {
+        symbol = " ";
+        format = "via [$symbol$context]($style) ";
+        style = "blue bold";
+        only_with_files = true;
+        detect_files = [
+          "docker-compose.yml"
+          "docker-compose.yaml"
+          "Dockerfile"
+        ];
+      };
+
       git_branch = {
         symbol = " ";
         style = "bold purple";
-        format = "on [$symbol$branch]($style) ";
+        format = "[git-](bold yellow)[\[](bold yellow)[$symbol$branch]($style) ";
       };
 
       git_status = {
         style = "bold purple";
-        format = "([[$all_status$ahead_behind]]($style) )";
+        format = "([\\[$all_status$ahead_behind\\]]($style) )";
+        stashed = "[\${count}*](green)";
+        modified = "[\${count}+](yellow)";
+        deleted = "[\${count}-](red)";
+        conflicted = "[\${count}~](red)";
+        ahead = "⇡\${count}";
+        behind = "⇣\${count}";
+        untracked = "[\${count}?](blue)";
+        staged = "[\${count}+](green)";
       };
 
-      # Menghilangkan teks "via" yang terlalu panjang agar rapi seperti Zsh
+      git_state = {
+        style = "bold purple";
+        format = "[$state( $progress_current/$progress_total) ]($style)[\]-](bold yellow)";
+      };
+
+      # Language Settings
       python = {
         symbol = "🐍 ";
-        format = "[$symbol($version )]($style)";
+        format = "via [\${symbol}python (\${version} )(\\(\${virtualenv}\\) )]($style)";
         style = "bold yellow";
       };
 
       nodejs = {
-        symbol = "󰎙 ";
-        format = "[$symbol($version )]($style)";
-        style = "bold green";
+        format = "via [󰎙 Node.js $version](bold green) ";
+        detect_files = [
+          "package.json"
+          ".node-version"
+        ];
+        detect_folders = [ "node_modules" ];
       };
 
-      nix_shell = {
-        symbol = " ";
-        format = "[$symbol]($style)";
-        style = "bold blue";
-      };
+      # Symbols Only
+      elixir.symbol = " ";
+      elm.symbol = " ";
+      golang.symbol = " ";
+      lua.symbol = "󰢱 ";
+      hg_branch.symbol = " ";
+      java.symbol = " ";
+      julia.symbol = " ";
+      haskell.symbol = "λ ";
+      nix_shell.symbol = " ";
+      package.symbol = " ";
+      rust.symbol = " ";
     };
   };
 }

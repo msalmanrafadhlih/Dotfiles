@@ -10,7 +10,7 @@
         "[ ](bold blue) [$username](bold magenta)"
         + "\${custom.dir_icon}"
         + ''
-          [$directory](bold yellow) $git_branch$git_status$git_state$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
+          [$directory](bold yellow) $git_branch$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
           $character
         '';
 
@@ -21,8 +21,8 @@
       };
 
       character = {
-        success_symbol = "[❯](bold purple)[❯](bold blue)[❯](bold green)";
-        error_symbol = "[❯❯❯](bold red)";
+        success_symbol = "[](bold purple)[](bold blue)";
+        error_symbol = "[](bold red)";
       };
 
       custom.dir_icon = {
@@ -75,7 +75,7 @@
       git_branch = {
         symbol = " ";
         style = "bold purple";
-        format = "[git-](bold yellow)[\\[](bold yellow)[$symbol$branch]($style) ";
+        format = "[git-](bold yellow)[\\[](bold yellow)[$symbol$branch $git_status $git_state]($style)[\\]-](bold yellow) ";
       };
 
       git_status = {
@@ -93,7 +93,7 @@
 
       git_state = {
         style = "bold purple";
-        format = "[$state( $progress_current/$progress_total) ]($style)[\\]-](bold yellow)";
+        format = "[$state( $progress_current/$progress_total) ]($style)";
       };
 
       # Language Settings

@@ -24,7 +24,7 @@
         };
 
         soft-wrap.enable = false;
-        completion-trigger-line = 1;
+        completion-trigger-len = 1;
 
         end-of-line-diagnostics = "hint";
         idle-timeout = 50;
@@ -37,13 +37,13 @@
           ignore = false;
           git-ignore = false;
         };
-        
+
         bufferline = "multiple";
         scroll-lines = 1;
 
         cursorline = true;
         inline-diagnostics.cursor-line = "warning";
-        
+
         cursor-shape = {
           insert = "bar";
           normal = "block";
@@ -79,12 +79,13 @@
 
         indent-guides = {
           render = true;
-          character = "·"; # Some characters that work well: " ▏", " ┆ ", " ┊ ", " ⸽" 
+          character =
+            "·"; # Some characters that work well: " ▏", " ┆ ", " ┊ ", " ⸽"
           skip-levels = 1;
         };
       };
 
-      keys = import ./keys.nix ;
+      keys = import ./keys.nix;
     };
 
     languages = import ./language.nix { inherit pkgs; };

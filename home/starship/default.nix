@@ -7,18 +7,19 @@
       # Palette dihapus agar Stylix bisa mengambil kendali penuh
 
       format = ''
-        [](purple)[](bg:purple fg:black)[](bg:blue fg:purple)$directory$git_branch$git_status$git_state$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
+        [ ](purple)[ ](bg:purple fg:black)[ ](bg:blue fg:purple)$directory$git_branch$git_status$git_state$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
         $character
       '';
 
       character = {
-        success_symbol = "[──❯](bold purple)[❯](bold blue)[❯](bold green)";
-        error_symbol = "[──❯❯❯](bold red)";
+        success_symbol = "[ ──❯](bold purple)[❯](bold blue)[❯](bold green)";
+        error_symbol = "[─ ─❯❯❯](bold red)";
       };
 
       directory = {
         read_only = " ";
-        format = "[ $path](bg:blue fg:black)[$read_only](bg:blue fg:red)[](blue) ";
+        format =
+          "[ $path](bg:blue fg:black)[$read_only](bg:blue fg:red)[](blue) ";
         truncation_length = 10;
         truncate_to_repo = true;
       };
@@ -28,7 +29,8 @@
         show_milliseconds = false;
         disabled = false;
         style = "bold italic cyan";
-        format = "[\\(](bold italic blue)[$duration]($style)[\\)](bold italic blue)";
+        format =
+          "[\\(](bold italic blue)[$duration]($style)[\\)](bold italic blue)";
       };
 
       # Icons & Symbols
@@ -41,7 +43,8 @@
         format = "via [$symbol$context]($style) ";
         style = "blue bold";
         only_with_files = true;
-        detect_files = [ "docker-compose.yml" "docker-compose.yaml" "Dockerfile" ];
+        detect_files =
+          [ "docker-compose.yml" "docker-compose.yaml" "Dockerfile" ];
       };
 
       git_branch = {
@@ -70,7 +73,8 @@
       # Language Settings
       python = {
         symbol = "🐍 ";
-        format = "via [\${symbol}python (\${version} )(\\(\${virtualenv}\\) )]($style)";
+        format =
+          "via [\${symbol}python (\${version} )(\\(\${virtualenv}\\) )]($style)";
         style = "bold yellow";
       };
 

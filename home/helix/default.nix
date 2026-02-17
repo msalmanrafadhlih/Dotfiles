@@ -6,7 +6,7 @@
     defaultEditor = true;
 
     settings = {
-      # theme = "catppuccin_mocha_transparent";
+      theme = "merionette";
       editor = {
         auto-save = false;
         # scrollPastEnd = true;

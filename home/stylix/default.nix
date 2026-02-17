@@ -78,23 +78,14 @@
     ## Attributes defining the systemwide cursor.
     ## Set either all or none of these attributes.
     cursor = {
-      # Ganti nama ini sesuai folder di repo (Doro, Kafka, M200, dll)
       name = "Doro";
       size = 24;
-      package = pkgs.runCommand "tq-cursor-collection" { } ''
-        mkdir -p $out/share/icons
-
-        # Ambil semua folder dari root repository
-        # Dan buat symlink ke folder icons sistem
-        ln -s ${
-          pkgs.fetchFromGitHub {
-            owner = "TQ-See";
-            repo = "Cursors-memes";
-            rev = "main";
-            sha256 = "sha256-wBy9mA3IczaCDtd/RR/WZIep24GEZueYso8p9ELxFrI=";
-          }
-        }/* $out/share/icons/
-      '';
+      package = pkgs.callPackage (pkgs.fetchFromGitHub {
+        owner = "TQ-See";
+        repo = "Cursors-memes";
+        rev = "main";
+        sha256 = "sha256-wBy9mA3IczaCDtd/RR/WZIep24GEZueYso8p9ELxFrI=";
+      }) { };
     };
 
     ##########

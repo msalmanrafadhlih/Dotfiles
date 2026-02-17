@@ -125,14 +125,10 @@
     icons = {
       enable = true;
       # Nama di sini harus sesuai dengan nama folder di dalam /share/icons/
-      # Biasanya untuk Vimix namanya adalah "Vimix-Ruby" atau "Vimix-Ruby-Dark"
-      dark = "Vimix-Ruby";
-      light = "Vimix-Ruby";
-
-      # Kita override package-nya agar hanya menginstall varian Ruby
-      package = pkgs.vimix-icon-theme.override {
-        colorVariants = [ "Ruby" ];
-      };
+      # ls $(nix-build -E "with import <nixpkgs> {}; vimix-icon-theme")/share/icons
+      dark = "Vimix-ruby-dark";
+      light = "Vimix-ruby";
+      package = pkgs.vimix-icon-theme;
     };
   };
 }

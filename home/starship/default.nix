@@ -6,7 +6,7 @@
       add_newline = false;
       command_timeout = 500;
       continuation_prompt = "[∙](bright-black) ";
-      format = "[ ](0x9A348E)$username" + "\${custom.dir_icon}" + "$shlvl$singularity$kubernetes$directory$vcsh $git_branch$hg_branch$docker_context$package$buf$c$cmake$cobol$container$daml$dart$deno$dotnet$elixir$elm$erlang$golang$haskell$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$perl$php$pulumi$purescript$python$rlang$red$ruby$rust$scala$swift$terraform$vlang$vagrant$zig$nix_shell$conda$spack$aws$gcloud$openstack$azure$env_var$crystal$sudo$line_break$cmd_duration$shell$status$character";
+      format = "[ ](0x9A348E)$username" + "\${custom.dir_icon}" + "$shlvl$singularity$kubernetes$directory$vcsh$git_branch$hg_branch$docker_context$package$buf$c$cmake$cobol$container$daml$dart$deno$dotnet$elixir$elm$erlang$golang$haskell$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$perl$php$pulumi$purescript$python$rlang$red$ruby$rust$scala$swift$terraform$vlang$vagrant$zig$nix_shell$conda$spack$aws$gcloud$openstack$azure$env_var$crystal$sudo$line_break$cmd_duration$shell$status$character";
       right_format = "";
       scan_timeout = 30;
  #      
@@ -24,6 +24,21 @@
           format = "[ $output ]($style)";
         };
       };
+      directory = {
+        disabled = false;
+        fish_style_pwd_dir_length = 0;
+        format = "[$path]($style)[$read_only]($read_only_style) ";
+        home_symbol = " ~";
+        read_only = "  Read Only";
+        read_only_style = "red";
+        repo_root_format = "[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ";
+        style = "cyan bold";
+        truncate_to_repo = false;
+        truncation_length = 10;
+        truncation_symbol = "…/";
+        use_logical_path = true;
+        use_os_path_sep = true;
+      };
 
       character = {
         format = "$symbol ";
@@ -33,7 +48,7 @@
         error_symbol = "[✗](bold red) ";
       };
       status = {
-        format = "[]($style)[$symbol$status]($style)";
+        format = "[]($style)[$symbol]($style)";
         map_symbol = true;
         not_executable_symbol = " 🚫 FAILED ";
         not_found_symbol = " 🔍 NOT FOUND ";
@@ -42,8 +57,8 @@
         pipestatus_separator = "|";
         recognize_signal_code = true;
         signal_symbol = " ⚡";
-        style = "bold red bg:blue";
-        success_symbol = " 🟢 SUCCESS ";
+        style = "bold red";
+        success_symbol = "";
         symbol = "";
         disabled = false;
       };
@@ -51,7 +66,7 @@
       git_branch = {
         symbol = " ";
         style = "bold purple";
-        format = "[git-](bold yellow)[\\[](bold yellow)[$symbol$branch$git_status$git_state&git_metrics$git_commit]($style)[\\]-](bold yellow) ";
+        format = "[git-](bold yellow)[\\[](bold yellow)[$symbol$branch$git_status$git_state$git_metrics$git_commit]($style)[\\]-](bold yellow) ";
       };
 
       git_commit = {
@@ -116,7 +131,6 @@
       };
 
       cmd_duration = {
-        dasabled = false;
         min_time = 2000;
         show_milliseconds = false;
         disabled = false;
@@ -158,7 +172,7 @@
       c = {
         format = "[$symbol($version(-$name) )]($style)[ ]($style)";
         version_format = "v$raw";
-        style = "fg:149 bold bg:0x86BBD8";
+        style = "fg:149 bold ";
         symbol = " ";
         disabled = false;
         detect_extensions = [
@@ -266,21 +280,6 @@
         ];
         detect_folders = [];
       };
-      directory = {
-        disabled = false;
-        fish_style_pwd_dir_length = 0;
-        format = "[$path]($style)[$read_only]($read_only_style) ";
-        home_symbol = "~";
-        read_only = " ";
-        read_only_style = "red";
-        repo_root_format = "[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ";
-        style = "cyan bold bg:0xDA627D";
-        truncate_to_repo = false;
-        truncation_length = 10;
-        truncation_symbol = "…/";
-        use_logical_path = true;
-        use_os_path_sep = true;
-      };
       directory.substitutions = {
         # Here is how you can shorten some long paths by text replacement;
         # similar to mapped_locations in Oh My Posh:;
@@ -297,7 +296,7 @@
       };
       docker_context = {
         format = "[$symbol$context]($style) [ ]($style)";
-        style = "blue bold bg:0x06969A";
+        style = "blue bold";
         symbol = " ";
         only_with_files = true;
         disabled = false;
@@ -333,7 +332,7 @@
       elixir = {
         format = "[$symbol($version (OTP $otp_version) )]($style)[ ]($style)";
         version_format = "v$raw";
-        style = "bold purple bg:0x86BBD8";
+        style = "bold purple";
         symbol = " ";
         disabled = false;
         detect_extensions = [];
@@ -343,7 +342,7 @@
       elm = {
         format = "[$symbol($version )]($style)[ ]($style)";
         version_format = "v$raw";
-        style = "cyan bold bg:0x86BBD8";
+        style = "cyan bold";
         symbol = " ";
         disabled = false;
         detect_extensions = ["elm"];
@@ -402,7 +401,7 @@
         format = "[$symbol($version )]($style)[ ]($style)";
         version_format = "v$raw";
         symbol = " ";
-        style = "bold cyan bg:0x86BBD8";
+        style = "bold cyan";
         disabled = false;
         detect_extensions = ["go"];
         detect_files = [
@@ -419,7 +418,7 @@
         format = "[$symbol($version )]($style)[ ]($style)";
         version_format = "v$raw";
         symbol = "λ ";
-        style = "bold purple bg:0x86BBD8";
+        style = "bold purple";
         disabled = false;
         detect_extensions = [
           "hs"
@@ -463,7 +462,7 @@
       java = {
         disabled = false;
         format = "[$symbol($version )]($style)[ ]($style)";
-        style = "red dimmed bg:0x86BBD8";
+        style = "red dimmed";
         symbol = " ";
         version_format = "v$raw";
         detect_extensions = [
@@ -497,7 +496,7 @@
       julia = {
         disabled = false;
         format = "[$symbol($version )]($style)[ ]($style)";
-        style = "bold purple bg:0x86BBD8";
+        style = "bold purple";
         symbol = " ";
         version_format = "v$raw";
         detect_extensions = ["jl"];
@@ -558,7 +557,7 @@
       };
       nim = {
         format = "[$symbol($version )]($style)[ ]($style)";
-        style = "yellow bold bg:0x86BBD8";
+        style = "yellow bold";
         symbol = " ";
         version_format = "v$raw";
         disabled = false;
@@ -581,7 +580,7 @@
       nodejs = {
         format = "[$symbol($version )]($style)[ ]($style)";
         not_capable_style = "bold red";
-        style = "bold green bg:0x86BBD8";
+        style = "bold green";
         symbol = " ";
         version_format = "v$raw";
         disabled = false;
@@ -768,7 +767,7 @@
         format = "[$symbol($version )]($style)[ ]($style)";
         version_format = "v$raw";
         symbol = "🦀 ";
-        style = "bold red bg:0x86BBD8";
+        style = "bold red";
         disabled = false;
         detect_extensions = ["rs"];
         detect_files = ["Cargo.toml"];
@@ -861,7 +860,7 @@
       };
       time = {
         format = "[$symbol $time]($style) ";
-        style = "bold yellow bg:0x33658A";
+        style = "bold yellow";
         use_12hr = false;
         disabled = false;
         utc_time_offset = "local";
@@ -870,10 +869,10 @@
         time_range = "-";
       };
       username = {
-        format = "[$user]($style) ";
+        format = "[$user]($style)";
         show_always = true;
-        style_root = "red bold bg:0x9A348E";
-        style_user = "yellow bold bg:0x9A348E";
+        style_root = "red bold";
+        style_user = "yellow bold";
         disabled = false;
       };
       vagrant = {

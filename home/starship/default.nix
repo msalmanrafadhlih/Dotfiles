@@ -11,7 +11,7 @@
         + "\${custom.dir_icon}"
         + ''
           [$directory](bold yellow) $git_branch$git_status$git_state$rust$golang$nodejs$lua$nix_shell$dart$haskell$julia$python$elm$elixir$scala$aws$docker_context$package$cmd_duration
-                  $character
+          $character
         '';
 
       username = {
@@ -40,9 +40,9 @@
       };
 
       directory = {
-        read_only = " ";
+        read_only = "  Read only";
         home_symbol = " ~";
-        format = "[$path](bg:blue fg:black)[$read_only](bg:blue fg:red)";
+        format = "[$path](bold cyan)[$read_only](fg:red)";
         truncation_length = 15;
         truncate_to_repo = false;
       };
@@ -75,7 +75,7 @@
       git_branch = {
         symbol = " ";
         style = "bold purple";
-        format = "[git-](bold yellow)[\[](bold yellow)[$symbol$branch]($style) ";
+        format = "[git-](bold yellow)[\\[](bold yellow)[$symbol$branch]($style) ";
       };
 
       git_status = {
@@ -93,7 +93,7 @@
 
       git_state = {
         style = "bold purple";
-        format = "[$state( $progress_current/$progress_total) ]($style)[\]-](bold yellow)";
+        format = "[$state( $progress_current/$progress_total) ]($style)[\\]-](bold yellow)";
       };
 
       # Language Settings

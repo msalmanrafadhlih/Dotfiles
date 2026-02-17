@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {  # 1. Menambahkan 'lib' di sini
 
   xdg.mimeApps.defaultApplications = {
     "x-scheme-handler/terminal" = [ "kitty.desktop" ];
@@ -18,18 +18,13 @@
       mode = "no-title no-cwd";
     };
 
-    # font = {
-    #   name = "JetBrainsMono NFM Light";
-    #   package = pkgs.nerd-fonts.jetbrains-mono;
-    #   size = 10.5;
-    # };
-
     settings = {
-      background_opacity = 0.5;
+      # 2. PERBAIKAN UTAMA: Menggunakan lib.mkForce dan mengubah ke String
+      background_opacity = lib.mkForce "0.5";
       background_blur = 40;
 
       placement_strategy = "center";
-      inactive_text_alpha = 0.6;
+      inactive_text_alpha = "0.6"; # Disarankan pakai string untuk konsistensi di Kitty conf
       confirm_os_window_close = 0;
       tab_bar_style = "powerline";
 

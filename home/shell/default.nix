@@ -4,18 +4,6 @@
     ./zsh.nix
   ];
 
-  catppuccin = {
-    bat = {
-      enable = true;
-      flavor = "mocha";
-    };
-
-    fzf = {
-      enable = true;
-      flavor = "mocha";
-    };
-  };
-  
   # shell completion 
   programs.carapace = {
     enable = true;

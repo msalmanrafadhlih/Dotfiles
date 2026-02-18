@@ -220,25 +220,30 @@ DPLAYLIST() {
 
 SAVEFLAKE() {
   local dir="$HOME/.dotfiles/bspwm"
-  local msg="${1:-"update configs"}" # Default message biar gak error kalau lupa
+  # Jika argumen $1 kosong, gunakan "update configs"
+  local msg="${1:-"update configs"}" 
+  # Mengambil tanggal saat ini untuk pelengkap pesan commit
+  local timestamp=$(date "+%Y-%m-%d %H:%M")
   
-  cd "$dir" || return
+  cd "$dir" || { echo "Directory tidak ditemukan!"; return 1 }
 
   local current_branch=$(git branch --show-current)
   [ -z "$current_branch" ] && { echo "Bukan repo Git!"; return 1 }
 
   local target_branch=${2:-$current_branch}
 
-  # Proses Git
-  git add . && git commit -m "$msg" && git push origin "$target_branch"
+  # Proses Git: Pesan commit akan jadi "update configs | 2024-05-20 10:00"
+  git add . && git commit -m "$msg | $timestamp" && git push origin "$target_branch"
   
-  # Tanya dulu sebelum lanjut rebuild system (opsional tapi aman)
+  # Konfirmasi rebuild
   echo -n "Lanjut rebuild system? (y/n) "
   read -k 1 res
   echo
   if [[ "$res" == "y" ]]; then
     cd "$HOME/.dotfiles/system" || return
-    # Hanya update flake kalau kamu benar-benar butuh (flag -u)
+    
+    # Update input spesifik jika ada, lalu rebuild
+    nix flake update dotfiles
     sudo nixos-rebuild switch --flake .#nixos
   fi
 }

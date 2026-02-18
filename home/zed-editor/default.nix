@@ -22,10 +22,12 @@
     ];
 
     userSettings = {
-      vim_mode = true;
+      vim_mode = false;
+      helix_mode = true;
       show_whitespaces = "all";
-      ui_font_size = lib.mkDefault 10;
-      editor_font_size = lib.mkDefault 10;
+      current_line_highlight = "gutter";
+      ui_font_size = lib.mkForce 10;
+      editor_font_size = lib.mkForce 8;
       # Tetap pakai mkForce karena konfigurasi sistem lain mungkin mencoba mengubah ini
       buffer_font_size = lib.mkForce 10;
 

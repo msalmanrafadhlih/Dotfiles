@@ -91,7 +91,6 @@
     ##########
     ## Fonts Theming
     fonts = {
-      # packages = []; # list of packages
       sizes = {
         applications = 10;
         desktop = 10;
@@ -105,18 +104,18 @@
       };
 
       monospace = {
-        name = "Dejavu Sans Mono";
-        package = pkgs.dejavu_fonts;
+        name = "JetBrainsMono Nerd Font"; # Font coding paling enak
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
 
       sansSerif = {
-        name = "DejaVu Sans";
-        package = pkgs.dejavu_fonts;
+        name = "Inter"; # UI aplikasi jadi terlihat modern
+        package = pkgs.inter;
       };
 
       serif = {
-        name = "DejaVu Serif";
-        package = pkgs.dejavu_fonts;
+        name = "Noto Serif";
+        package = pkgs.noto-fonts;
       };
     };
 

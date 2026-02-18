@@ -219,22 +219,26 @@ DPLAYLIST() {
 }
 
 SAVEFLAKE() {
-  cd ~/.dotfiles/bspwm
+  local dir="$HOME/.dotfiles/bspwm"
+  local msg="${1:-"update configs"}" # Default message biar gak error kalau lupa
+  
+  cd "$dir" || return
 
-  # Ambil nama branch saat ini
   local current_branch=$(git branch --show-current)
+  [ -z "$current_branch" ] && { echo "Bukan repo Git!"; return 1 }
 
-  # Cek apakah kita sedang di dalam repository git
-  if [ -z "$current_branch" ]; then
-    echo "Error: Kamu tidak sedang di dalam repository Git!"
-    return 1
-  fi
-
-  # Gunakan argumen $2 jika ada, jika tidak ada pakai current_branch
   local target_branch=${2:-$current_branch}
 
-  git add .
-  git commit -m "$1"
-  git push origin "$target_branch"
-  cd ~/.dotfiles/system && nix flake update --commit-lock-file && sudo nixos-rebuild switch --flake .#nixos
+  # Proses Git
+  git add . && git commit -m "$msg" && git push origin "$target_branch"
+  
+  # Tanya dulu sebelum lanjut rebuild system (opsional tapi aman)
+  echo -n "Lanjut rebuild system? (y/n) "
+  read -k 1 res
+  echo
+  if [[ "$res" == "y" ]]; then
+    cd "$HOME/.dotfiles/system" || return
+    # Hanya update flake kalau kamu benar-benar butuh (flag -u)
+    sudo nixos-rebuild switch --flake .#nixos
+  fi
 }

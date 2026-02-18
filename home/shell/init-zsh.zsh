@@ -217,3 +217,9 @@ DPLAYLIST() {
         --extractor-args 'youtube:player_client=android' \
         "$url"
 }
+
+GIT() {
+  git add .
+  git commit -m "$1"
+  git push origin "${2:-main}"
+}

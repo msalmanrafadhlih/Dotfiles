@@ -1,5 +1,5 @@
 { pkgs, inputs, ... }: {
-  home.packages = with pkgs; [ trash-cli ouch glow exiftool eza];
+  home.packages = with pkgs; [ piper trash-cli ouch glow exiftool eza];
 
   programs.yazi = {
     enable = true;
@@ -15,7 +15,7 @@
       compress = inputs.yazi-compress;
     };
 
-    initLua = builtins.readFile ./init.lua;
+    initLua = builtins.readFile ./init.lua ;
 
     theme = {
       flavor = {

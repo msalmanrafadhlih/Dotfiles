@@ -78,7 +78,7 @@
     ## Attributes defining the systemwide cursor.
     ## Set either all or none of these attributes.
     cursor = {
-      name = "Doro";
+      name = "Kafka";
       size = 24;
       package = pkgs.callPackage (pkgs.fetchFromGitHub {
         owner = "TQ-See";

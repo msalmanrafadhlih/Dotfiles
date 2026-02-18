@@ -13,9 +13,9 @@ export XDG_CURRENT_DESKTOP='bspwm'
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 run() {
-  if ! pidof -q "$1"; then
-    "$@" &
-  fi
+    if ! pidof -q "$1"; then
+        "$@" &
+    fi
 }
 
 # Border
@@ -53,7 +53,7 @@ bspc rule -a TerminalDefault state=floating sticky=off rectangle=750x665+3+385
 bspc rule -a TerminalPinned state=floating sticky=on rectangle=470x350+1445+30
 bspc rule -a St state=floating sticky=off rectangle=1435x1020+3+30
 bspc rule -a Terminalnvim desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
-bspc rule -a Code desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
+bspc rule -a dev.zed.Zed desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
 bspc rule -a youtube desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
 bspc rule -a qView state=floating center=on sticky=off rectangle=470x350+0+0
 bspc rule -a YaziTerm state=floating center=on rectangle=900x442+0+0
@@ -61,6 +61,7 @@ bspc rule -a Thunar desktop=^1
 bspc rule -a Spotify desktop=^4
 bspc rule -a vesktop desktop=^5
 bspc rule -a Vivaldi-stable desktop=^2
+bspc rule -a "emulator" state=floating
 
 # picom
 pkill picom
@@ -71,7 +72,7 @@ picom &
 ~/.local/bin/bg-slideshow
 
 # sxhkd
-pgrep -x sxhkd >/dev/null || sxhkd &
+pgrep -x sxhkd > /dev/null || sxhkd &
 
 # polybar
 chmod +x ~/.config/polybar/launch.sh
@@ -82,13 +83,13 @@ chmod +x ~/.config/eww/scripts/*
 #eww daemon && eww open topbar
 
 # dunst untuk widget notifikasi
-pgrep -x dunst >/dev/null || dunst &
+pgrep -x dunst > /dev/null || dunst &
 
 chmod +x ~/.local/bin/*
 update-desktop-database ~/.local/share/applications/
 
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-  eval "$(dbus-launch --sh-syntax)"
+    eval "$(dbus-launch --sh-syntax)"
 fi
 
 pkill daktilo

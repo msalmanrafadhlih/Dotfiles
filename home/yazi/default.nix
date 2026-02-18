@@ -1,5 +1,5 @@
 { pkgs, inputs, ... }: {
-  home.packages = with pkgs; [ piper trash-cli ouch glow exiftool eza];
+  home.packages = with pkgs; [ trash-cli ouch glow exiftool eza];
 
   programs.yazi = {
     enable = true;
@@ -47,7 +47,7 @@
 
       opener = {
         play = [{
-          run = ''xdg-open "$@"'';
+          run = "xdg-open '$@'";
           orphan = true;
           desc = "open";
           for = "linux";
@@ -59,8 +59,7 @@
           # directory previewer
           {
             name = "*/";
-            run = ''
-              piper -- eza -TL=2 --color=always --icons=always --group-directories-first --no-quotes -a "$1"'';
+            run = "piper -- eza -TL=2 --color=always --icons=always --group-directories-first --no-quotes -a '$1'";
           }
 
           # archive previewers
@@ -97,14 +96,12 @@
           {
             name = "*.md";
             mime = "text/markdown";
-            run = ''
-              piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"
-            '';
+            run = "piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark '$1'";
           }
 
           {
             name = "*.csv";
-            run = ''piper -- bat -p --color=always "$1"'';
+            run = "piper -- bat -p --color=always '$1'";
           }
         ];
       };

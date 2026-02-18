@@ -56,7 +56,7 @@
         pipestatus_format = "[$pipestatus] => [$symbol$common_meaning$signal_name$maybe_int]($style)";
         pipestatus_separator = "|";
         recognize_signal_code = true;
-        signal_symbol = " ⚡";
+        signal_symbol = " ⚡SIGNAL's LOST";
         style = "bold red";
         success_symbol = " 🟢 SUCCESS ";
         symbol = "";

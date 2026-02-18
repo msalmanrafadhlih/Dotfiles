@@ -218,7 +218,7 @@ DPLAYLIST() {
         "$url"
 }
 
-GIT() {
+SAVEFLAKE() {
   # Ambil nama branch saat ini
   local current_branch=$(git branch --show-current)
 
@@ -234,4 +234,5 @@ GIT() {
   git add .
   git commit -m "$1"
   git push origin "$target_branch"
+  cd ~/.dotfiles/system && nix flake update --commit-lock-file && sudo nixos-rebuild switch --flake .#nixos
 }

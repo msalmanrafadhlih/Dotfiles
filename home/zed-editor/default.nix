@@ -1,3 +1,5 @@
+{ lib, pkgs, ... }:
+
 {
   programs.zed-editor = {
     enable = true;
@@ -116,12 +118,9 @@
         };
       };
 
-
       # Tell Zed to use direnv and direnv can use a flake.nix environment
       load_direnv = "shell_hook";
       base_keymap = "VSCode";
-
-
     };
   };
 }

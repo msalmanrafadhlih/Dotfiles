@@ -120,11 +120,11 @@
         "zjstatus": "zjstatus"
       },
       "locked": {
-        "lastModified": 1771400220,
-        "narHash": "sha256-rSXWKGVWTPlf2o0pJKgyXl1nqob5uYht9snNipuYS+U=",
+        "lastModified": 1771401475,
+        "narHash": "sha256-dShac8p+h2/9VVYRSyIq4EnBG2jQ3KAb1xQbwqXn3XI=",
         "owner": "msalmanrafadhlih",
         "repo": "Dotfiles",
-        "rev": "d4abf4022f652ab33ec3dad8d359c05f5122077c",
+        "rev": "ee03fcf6e23f3987f835ac5d53dab4bd1cec7458",
         "type": "github"
       },
       "original": {

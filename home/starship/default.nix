@@ -283,16 +283,16 @@
       directory.substitutions = {
         # Here is how you can shorten some long paths by text replacement;
         # similar to mapped_locations in Oh My Posh:;
-        "Documents" = " ";
-        "Downloads" = " ";
-        "Music" = " ";
-        "Pictures" = " ";
+        "Documents" = " Documents";
+        "Downloads" = " Downloads";
+        "Music" = " Musics";
+        "Pictures" = " Pictures";
         # Keep in mind that the order matters. For example:;
         # "Important Documents" = "  ";
         # will not be replaced, because "Documents" was already substituted before.;
         # So either put "Important Documents" before "Documents" or use the substituted version:;
         # "Important  " = "  ";
-        "Important " = " ";
+        "Important " = " Important Documents!";
       };
       docker_context = {
         format = "[$symbol$context]($style) [ ]($style)";

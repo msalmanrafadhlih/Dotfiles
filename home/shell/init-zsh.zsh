@@ -219,7 +219,19 @@ DPLAYLIST() {
 }
 
 GIT() {
+  # Ambil nama branch saat ini
+  local current_branch=$(git branch --show-current)
+
+  # Cek apakah kita sedang di dalam repository git
+  if [ -z "$current_branch" ]; then
+    echo "Error: Kamu tidak sedang di dalam repository Git!"
+    return 1
+  fi
+
+  # Gunakan argumen $2 jika ada, jika tidak ada pakai current_branch
+  local target_branch=${2:-$current_branch}
+
   git add .
   git commit -m "$1"
-  git push origin "${2:-main}"
+  git push origin "$target_branch"
 }

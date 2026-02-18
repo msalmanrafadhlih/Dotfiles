@@ -14,7 +14,6 @@
       "python" 
       "rust" 
       "typescript" 
-      "html" 
       "css" 
       "kotlin" 
       "java" 
@@ -22,86 +21,69 @@
     ];
 
     userSettings = {
+      active_pane_modifiers = {
+        border_size = 0.1; # Default 0.0
+        inactive_opacity = 0.5;
+      };
+      bottom_dock_layout = "contained"; # contained, full, left_aligned, right_aligned
+      agent_font_size = 8;
+      allow_rewrap = "in_comments"; # in_comments, in_selections, anywhere
+      auto_indent = true;
+      auto_indent_on_paste = true;
+      autosave = "off";
+      autoscroll_on_clicks = false;
+      auto_signature_help = false;
+      auto_update = false;
+      base_keymap = "VSCode";
+      # buffer_font_family = ".ZedMono";
+      buffer_font_size = lib.mkForce 8;
+      buffer_font_weight = 400; # Default 400
+      buffer_line_height = "comfortable";
+      centered_layout = {
+        left_padding = 0.2;
+        right_padding = 0.2;
+      };
+      close_on_file_delete = false;
+      confirm_quit = true;
+      diagnostics_max_severity = "all"; # all, error, warning, info, hint
+      disable_ai = false;
+      load_direnv = "direct"; # shell_hook, direct, disabled
+      double_click_in_multibuffer = "select"; # slect, open
+
       vim_mode = false;
       helix_mode = true;
       show_whitespaces = "all";
       current_line_highlight = "gutter";
       ui_font_size = lib.mkForce 10;
-      editor_font_size = lib.mkForce 8;
       # Tetap pakai mkForce karena konfigurasi sistem lain mungkin mencoba mengubah ini
-      buffer_font_size = lib.mkForce 10;
 
       node = {
         path = lib.getExe pkgs.nodejs;
         npm_path = lib.getExe' pkgs.nodejs "npm";
       };
 
-      hour_format = "hour24";
-      auto_update = false;
-
       terminal = {
         alternate_scroll = "off";
         blinking = "off";
         copy_on_select = false;
         dock = "bottom";
+        load_direnv = "shell_hook";
+        base_keymap = "VSCode";
         detect_venv = {
           on = {
             directories = [ ".env" "env" ".venv" "venv" ];
             activate_script = "default";
           };
         };
-        env = {
-          TERM = "st"; # Pas untuk setup suckless kamu
-        };
+        # env = {};
         font_family = "FiraCode Nerd Font";
         line_height = "comfortable";
         shell = "system";
         toolbar = {
-          title = true;
+          breadcrumbs = true;
         };
         working_directory = "current_project_directory";
       };
-
-      # Konfigurasi LSP: Memaksa Zed mencari binary di system path (PATH)
-      lsp = {
-        rust-analyzer = { binary = { path_lookup = true; }; };
-        nixd = { binary = { path_lookup = true; }; }; # LSP Nix favorit di NixOS
-        lua-language-server = { binary = { path_lookup = true; }; };
-        pyright = { binary = { path_lookup = true; }; };
-        typescript-language-server = { binary = { path_lookup = true; }; };
-        vscode-html-language-server = { binary = { path_lookup = true; }; };
-        vscode-css-language-server = { binary = { path_lookup = true; }; };
-        kotlin-language-server = { binary = { path_lookup = true; }; };
-        jdtls = { binary = { path_lookup = true; }; };
-        bash-language-server = { binary = { path_lookup = true; }; };
-        elixir-ls = {
-          binary = { path_lookup = true; };
-          settings = { dialyzerEnabled = true; };
-        };
-      };
-
-      languages = {
-        "Nix" = { language_servers = [ "nixd" ]; };
-        "Lua" = { language_servers = [ "lua-language-server" ]; };
-        "TypeScript" = { language_servers = [ "typescript-language-server" ]; };
-        "JavaScript" = { language_servers = [ "typescript-language-server" ]; };
-        "Python" = { language_servers = [ "pyright" ]; };
-        "Bash" = { language_servers = [ "bash-language-server" ]; };
-        "Zsh" = { language_servers = [ "bash-language-server" ]; };
-        
-        "Elixir" = {
-          language_servers = [ "elixir-ls" ];
-          format_on_save = {
-            external = {
-              command = "mix";
-              arguments = [ "format" "--stdin-filename" "{buffer_path}" "-" ];
-            };
-          };
-        };
-      };
-
-      load_direnv = "shell_hook";
-      base_keymap = "VSCode";
     };
   };
 }

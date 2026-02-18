@@ -4,38 +4,30 @@
   programs.zed-editor = {
     enable = true;
 
-    # This populates the userSettings "auto_install_extensions"
-    extensions = [ "nix" "toml" "elixir" "make" ];
+    # Daftar Ekstensi yang otomatis di-install
+    extensions = [ 
+      "nix" 
+      "toml" 
+      "elixir" 
+      "make" 
+      "lua" 
+      "python" 
+      "rust" 
+      "typescript" 
+      "html" 
+      "css" 
+      "kotlin" 
+      "java" 
+      "bash" # Untuk Shell/Zsh script
+    ];
 
-    # Everything inside of these brackets are Zed options
     userSettings = {
       vim_mode = true;
       show_whitespaces = "all";
-      ui_font_size = 10;
-      editor_font_size = 10;
-      buffer_font_size = 10;
-
-      assistant = {
-        enabled = true;
-        version = "2";
-        default_open_ai_model = null;
-
-        # Provider options:
-        # - zed.dev models (claude-3-5-sonnet-latest) requires GitHub connected
-        # - anthropic models (claude-3-5-sonnet-latest, claude-3-haiku-latest, claude-3-opus-latest) requires API_KEY
-        # - copilot_chat models (gpt-4o, gpt-4, gpt-3.5-turbo, o1-preview) requires GitHub connected
-        default_model = {
-          provider = "zed.dev";
-          model = "claude-3-5-sonnet-latest";
-        };
-
-        # inline_alternatives = [
-        #   {
-        #     provider = "copilot_chat";
-        #     model = "gpt-3.5-turbo";
-        #   }
-        # ];
-      };
+      ui_font_size = lib.mkDefault 10;
+      editor_font_size = lib.mkDefault 10;
+      # Tetap pakai mkForce karena konfigurasi sistem lain mungkin mencoba mengubah ini
+      buffer_font_size = lib.mkForce 10;
 
       node = {
         path = lib.getExe pkgs.nodejs;
@@ -57,14 +49,10 @@
           };
         };
         env = {
-          TERM = "st";
+          TERM = "st"; # Pas untuk setup suckless kamu
         };
         font_family = "FiraCode Nerd Font";
-        font_features = null;
-        font_size = null;
         line_height = "comfortable";
-        option_as_meta = false;
-        button = false;
         shell = "system";
         toolbar = {
           title = true;
@@ -72,43 +60,35 @@
         working_directory = "current_project_directory";
       };
 
+      # Konfigurasi LSP: Memaksa Zed mencari binary di system path (PATH)
       lsp = {
-        rust-analyzer = {
-          binary = {
-            # path = lib.getExe pkgs.rust-analyzer;
-            path_lookup = true;
-          };
-        };
-
-        nix = {
-          binary = {
-            path_lookup = true;
-          };
-        };
-
+        rust-analyzer = { binary = { path_lookup = true; }; };
+        nixd = { binary = { path_lookup = true; }; }; # LSP Nix favorit di NixOS
+        lua-language-server = { binary = { path_lookup = true; }; };
+        pyright = { binary = { path_lookup = true; }; };
+        typescript-language-server = { binary = { path_lookup = true; }; };
+        vscode-html-language-server = { binary = { path_lookup = true; }; };
+        vscode-css-language-server = { binary = { path_lookup = true; }; };
+        kotlin-language-server = { binary = { path_lookup = true; }; };
+        jdtls = { binary = { path_lookup = true; }; };
+        bash-language-server = { binary = { path_lookup = true; }; };
         elixir-ls = {
-          binary = {
-            path_lookup = true;
-          };
-          settings = {
-            dialyzerEnabled = true;
-          };
+          binary = { path_lookup = true; };
+          settings = { dialyzerEnabled = true; };
         };
       };
 
       languages = {
+        "Nix" = { language_servers = [ "nixd" ]; };
+        "Lua" = { language_servers = [ "lua-language-server" ]; };
+        "TypeScript" = { language_servers = [ "typescript-language-server" ]; };
+        "JavaScript" = { language_servers = [ "typescript-language-server" ]; };
+        "Python" = { language_servers = [ "pyright" ]; };
+        "Bash" = { language_servers = [ "bash-language-server" ]; };
+        "Zsh" = { language_servers = [ "bash-language-server" ]; };
+        
         "Elixir" = {
-          language_servers = [ "!lexical" "elixir-ls" "!next-ls" ];
-          format_on_save = {
-            external = {
-              command = "mix";
-              arguments = [ "format" "--stdin-filename" "{buffer_path}" "-" ];
-            };
-          };
-        };
-
-        "HEEX" = {
-          language_servers = [ "!lexical" "elixir-ls" "!next-ls" ];
+          language_servers = [ "elixir-ls" ];
           format_on_save = {
             external = {
               command = "mix";
@@ -118,7 +98,6 @@
         };
       };
 
-      # Tell Zed to use direnv and direnv can use a flake.nix environment
       load_direnv = "shell_hook";
       base_keymap = "VSCode";
     };

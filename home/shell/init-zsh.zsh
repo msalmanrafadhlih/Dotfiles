@@ -219,6 +219,8 @@ DPLAYLIST() {
 }
 
 SAVEFLAKE() {
+  cd ~/.dotfiles/bspwm
+
   # Ambil nama branch saat ini
   local current_branch=$(git branch --show-current)
 

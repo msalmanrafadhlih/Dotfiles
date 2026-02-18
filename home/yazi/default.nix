@@ -95,8 +95,7 @@
           # markdown with glow
           {
             name = "*.md";
-            mime = "text/markdown";
-            run = "piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark '$1'";
+            run = "piper -- CLICOLOR_FORCE=1 glow --style=dark '$1'";
           }
 
           {

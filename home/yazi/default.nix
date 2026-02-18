@@ -1,5 +1,5 @@
 { pkgs, inputs, ... }: {
-  home.packages = with pkgs; [ trash-cli ouch glow exiftool ];
+  home.packages = with pkgs; [ trash-cli ouch glow exiftool eza];
 
   programs.yazi = {
     enable = true;
@@ -96,6 +96,7 @@
           # markdown with glow
           {
             name = "*.md";
+            mime = "text/markdown";
             run = ''
               piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"
             '';

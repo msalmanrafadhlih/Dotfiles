@@ -14,14 +14,15 @@ in
 	  ];
 	  enabledCustomApps = with spicePkgs.apps; [
 	    newReleases
+	    lyrics-plus
 	  ];
 	  enabledSnippets = with spicePkgs.snippets; [
 	    rotatingCoverart
 	    pointer
 	  ];
 
-	  theme = spicePkgs.themes.dreary;
-	  colorScheme = "Psycho";
+	  # theme = spicePkgs.themes.dreary;
+	  # colorScheme = "Psycho";
   };
 
   services.spotifyd = {

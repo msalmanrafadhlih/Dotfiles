@@ -43,25 +43,26 @@ bspc config automatic_scheme longest_side
 bspc config initial_polarity second_child
 bspc config removal_adjustment true
 
-bspc config external_rules_command "${HOME}"/.config/bspwm/src/ExternalRules
+bspc config external_rules_command ~/.config/bspwm/src/ExternalRules
 # --------------------------------------------- rectangle=WIDTHxHEIGHT+X+Y
-bspc rule -a floating_rmpc state=floating rectangle=750x350+3+30
-bspc rule -a ChatAi state=floating rectangle=470x665+1445+385
-bspc rule -a GeminiAi state=floating rectangle=470x665+1445+385
-bspc rule -a ClaudeAi state=floating rectangle=470x665+1445+385
-bspc rule -a TerminalDefault state=floating sticky=off rectangle=750x665+3+385
-bspc rule -a TerminalPinned state=floating sticky=on rectangle=470x350+1445+30
-bspc rule -a St state=floating sticky=off rectangle=1435x1020+3+30
-bspc rule -a Terminalnvim desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
-bspc rule -a dev.zed.Zed desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
-bspc rule -a youtube desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
-bspc rule -a qView state=floating center=on sticky=off rectangle=470x350+0+0
-bspc rule -a YaziTerm state=floating center=on rectangle=900x442+0+0
-bspc rule -a Thunar desktop=^1
-bspc rule -a Spotify desktop=^4
-bspc rule -a vesktop desktop=^5
-bspc rule -a Vivaldi-stable desktop=^2
-bspc rule -a "emulator" state=floating
+# bspc rule -a floating_rmpc state=floating rectangle=750x350+3+30
+# bspc rule -a ChatAi state=floating rectangle=470x665+1445+385
+# bspc rule -a GeminiAi state=floating rectangle=470x665+1445+385
+# bspc rule -a ClaudeAi state=floating rectangle=470x665+1445+385
+# bspc rule -a TerminalDefault state=floating sticky=off rectangle=750x665+3+385
+# bspc rule -a TerminalPinned state=floating sticky=on rectangle=470x350+1445+30
+# bspc rule -a St state=floating sticky=off rectangle=1435x1020+3+30
+# bspc rule -a Terminalnvim desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
+# bspc rule -a dev.zed.Zed desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
+# bspc rule -a youtube desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
+# bspc rule -a reddit desktop=^3 state=floating sticky=off rectangle=1435x1020+3+30
+# bspc rule -a qView state=floating center=on sticky=off rectangle=470x350+0+0
+# bspc rule -a YaziTerm state=floating center=on rectangle=900x442+0+0
+# bspc rule -a Thunar desktop=^1
+# bspc rule -a Spotify desktop=^4
+# bspc rule -a vesktop desktop=^5
+# bspc rule -a Vivaldi-stable desktop=^2
+# bspc rule -a "emulator" state=floating
 
 # picom
 pkill picom

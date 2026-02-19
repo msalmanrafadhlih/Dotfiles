@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
-kdocker -f -q chromium --user-data-dir=$HOME/.config/vivaldi/youtube --app="https://www.reddit.com" --class=youtube &
+kdocker -f -q chromium --user-data-dir=$HOME/.config/vivaldi/Chromium --app="https://www.reddit.com" --class=reddit &
 
 #surf "https://www.reddit.com"

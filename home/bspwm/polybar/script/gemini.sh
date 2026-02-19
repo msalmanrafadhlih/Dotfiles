@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-
-kdocker -q -f chromium --user-data-dir=$HOME/.config/vivaldi/ChatAi --app="https://gemini.google.com" --class=GeminiAi &
-
-
 #surf -K "https://gemini.google.com"
+
+kdocker -f -q chromium --user-data-dir=$HOME/.config/vivaldi/Chromium --app="https://gemini.google.com" --class=GeminiAi &

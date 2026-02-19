@@ -72,7 +72,7 @@
       # The opacity of the windows of notifications/popups,
       popups = 1.0;
       # The opacity of the windows of terminals,
-      terminal = 1.0;
+      terminal = 0.4;
     };
 
     ## Attributes defining the systemwide cursor.

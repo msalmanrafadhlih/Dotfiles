@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   imports = [ ./scripts.nix ];
 
   programs.helix = {
@@ -6,7 +6,7 @@
     defaultEditor = true;
 
     settings = {
-      theme = "merionette";
+      # theme = lib.mkForce "merionette";
       editor = {
         auto-save = false;
         # scrollPastEnd = true;

@@ -11,6 +11,7 @@
     # GUI
     ungoogled-chromium
     vivaldi
+    calibre
     # gimp
     timg
     zoom

@@ -82,7 +82,10 @@ case "$class" in
     "TerminalPinned")
         echo "state=floating sticky=on rectangle=$RECT_SIDE_SMALL"
         ;;
-    "St" | "TerminalNvim" | "dev.zed.Zed")
+    "St")
+        echo "state=floating sticky=off rectangle=$RECT_MAIN"
+        ;;
+    "TerminalNvim" | "dev.zed.Zed")
         echo "desktop=^3 state=floating sticky=off rectangle=$RECT_MAIN"
         ;;
     "YaziTerm")

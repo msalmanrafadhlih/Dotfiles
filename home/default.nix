@@ -36,7 +36,7 @@
 	# ./tmux 
 	# ./rmpc 
 	# ./ncmpcpp 
-	# ./btop 
+	./btop 
 	# ./com.kdocker 
 	# ./gtk-3.0
 	# ./ghostty 

@@ -107,7 +107,10 @@ case "$class" in
         echo "desktop=^2"
         ;;
     "emulator")
-        echo "state=floating"
+        echo "state=floating center=on"
+        ;;
+    "mpv")
+        echo "state=floating center=on"
         ;;
 esac
 

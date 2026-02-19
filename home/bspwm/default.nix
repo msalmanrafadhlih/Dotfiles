@@ -23,7 +23,6 @@ let
 		rmpc = "rmpc";
 		# ncmpcpp = "ncmpcpp";
 		fastfetch = "fastfetch";
-		btop = "btop";
 		"com.kdocker" = "com.kdocker";
 
 		# "gtk-3.0" = "gtk-3.0";

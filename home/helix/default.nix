@@ -6,7 +6,7 @@
     defaultEditor = true;
 
     settings = {
-      # theme = lib.mkForce "merionette";
+      theme = lib.mkForce "merionette";
       editor = {
         auto-save = false;
         # scrollPastEnd = true;

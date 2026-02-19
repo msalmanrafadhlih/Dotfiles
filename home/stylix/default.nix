@@ -66,11 +66,11 @@
     # Opacity Default = 1.0
     opacity = {
       # The opacity of the windows of applications,
-      applications = 1.0;
+      applications = 0.5;
       # The opacity of the windows of bars/widgets,
-      desktop = 1.0;
+      desktop = 0.5;
       # The opacity of the windows of notifications/popups,
-      popups = 1.0;
+      popups = 0.5;
       # The opacity of the windows of terminals,
       terminal = 0.4;
     };

@@ -3,8 +3,9 @@
   tquilla = "colorscript -r";
   NIXOS = "cd ~/.dotfiles/system && ls";
   HOME = "cd ~/.dotfiles/$XDG_CURRENT_DESKTOP && ls";
-
-  SAVEFLAKE = "cd ~/.dotfiles/system && nix flake update --commit-lock-file && sudo nixos-rebuild switch --flake .#nixos";
+  
+  GRAPH = "git log --oneline --decorate --graph --all";
+  GIT = "git add . && git commit -m";
 
   RUNNING = "systemctl --user list-units --state=running";
   SYSRUNNING = "systemctl list-units --state=running";
@@ -32,11 +33,9 @@
   ## USER CONFIGURATIONS {SAVE}
   BIN = "chmod +x ~/.local/bin/*.sh";
 
-  ## GIT INTEG?RATION
-  GIT = "git add . && git commit -m";
+  ## Xutils
   CLASS = "xprop | grep CLASS";
   NAME = "xprop | grep NAME";
-  GRAPH = "git log --oneline --decorate --graph --all";
 
   ## LINK BOOKMARKS
   PERSONAL = "hx ~/.config/bookmarks/personal.txt";

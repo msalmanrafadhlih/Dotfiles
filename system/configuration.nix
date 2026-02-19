@@ -15,6 +15,7 @@
     ./modules/services.nix
     ./modules/users.nix
     ./modules/virtualisation.nix
+    ./modules/devenv.nix
     
     ./modules/autoupdate.nix
     ./modules/fonts.nix

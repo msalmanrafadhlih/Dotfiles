@@ -11,9 +11,9 @@
 	boot = {
 		plymouth = {
 			enable = true;
-			# DEFAULT THEMES = details, glow, script, spinfinity,
+			# THEMES = details, glow, script, spinfinity, Bloodrage,
 			# spinner, breeze, fade-in, nixos, solar, text, tribar
-			theme = "spinfinity"; 
+			theme = "Bloodrage"; 
 			themePackages = [ pkgs.Bloodrage-plymouth ];
 			extraConfig = "";
 			# logo = pkgs.fetchurl {

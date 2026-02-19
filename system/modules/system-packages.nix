@@ -4,16 +4,16 @@
 
 {
   nixpkgs.config.allowUnfree = true;
+  # services.protonmail-bridge.enable = true;
 
   programs = {
     # firefox.enable = true;
-    # thunderbird.enable = true;
+    thunderbird.enable = true;
     st-flexipatch.enable = true;
 
     # # Enable Nix-ld for dynamic linking (running elf binaries)
     nix-ld.enable = true;
     git.enable = true;
-    direnv.enable = true;
     # steam.enable = true;
     # # to use gamemode with steam edit launch options inside
     # # game -> general -> launch options -> `gamemoderun %command%`
@@ -22,7 +22,6 @@
 
   environment.systemPackages = with pkgs; [
     # ======= CLI TOOLS
-    android-tools
     gh # Github-Cli
     ripgrep
     bat

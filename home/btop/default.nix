@@ -5,7 +5,7 @@
     # themes = {};
     package = pkgs.btop;
     settings = {
-      color_theme = "dracula";
+      # color_theme = "dracula";
       truecolor = true;
       force_tty = false;
       

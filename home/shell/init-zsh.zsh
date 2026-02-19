@@ -16,7 +16,6 @@ if [[ -z "$TMUX" ]]; then
     fi
 fi
 
-eval "$(direnv hook zsh)"
 # eval "$(tv init zsh)"
 
 # ==========================================================

@@ -1,13 +1,11 @@
 # ./bspwm/default.nix
- 
-{ config, ... }:
+ { config, dotfiles, ... }:
 
 let
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 
   home = config.home.homeDirectory;
-  branch = "bspwm";
-  dotfiles_path = "${home}/.dotfiles/${branch}/home";
+  dotfiles_path = "${home}/.dotfiles/${dotfiles}/home";
 
   configs = {
 		bspwm = "bspwm";
@@ -19,7 +17,6 @@ let
 		# eww = "eww";
 		
 		nano = "nano";
-		tmux = "tmux";
 		fastfetch = "fastfetch";
 		"com.kdocker" = "com.kdocker";
 

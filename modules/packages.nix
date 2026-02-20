@@ -33,7 +33,6 @@
     
     # CLI TOOLS
 	  ani-cli
-	  rmpc
 
     # UTILS
     ffmpeg-full

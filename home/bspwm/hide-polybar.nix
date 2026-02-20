@@ -7,5 +7,6 @@ bspc config bottom_padding 0
 
 polybar-msg cmd hide
       '';
+  executable = true;
   };
 }

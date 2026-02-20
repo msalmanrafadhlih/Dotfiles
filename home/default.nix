@@ -25,7 +25,7 @@
   ./yazi
   # ./zathura # Document Viewer
   # ./yazelix
-  ./zellij
+  # ./zellij
 	# ./bspwm/polybar 
 	# ./bspwm/sxhkd 
 	# ./picom 
@@ -33,7 +33,7 @@
 	# ./dunst 
 	# ./eww 
 	# ./nano 
-	# ./tmux 
+	./tmux 
 	./rmpc 
 	# ./ncmpcpp 
 	./btop 

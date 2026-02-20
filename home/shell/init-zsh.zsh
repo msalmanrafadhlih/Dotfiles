@@ -3,25 +3,49 @@
 # ==========================================================
 [[ $- != *i* ]] && return
 
-# # ==========================================================
-# # Auto TMUX (intentional behavior)
-# # ==========================================================
-# if [[ -z "$TMUX" ]]; then
-#     sessions=$(tmux list-sessions 2>/dev/null | wc -l)
+# ==========================================================
+# Auto TMUX (intentional behavior)
+# ==========================================================
+if [[ -z "$TMUX" ]]; then
+    sessions=$(tmux list-sessions 2>/dev/null | wc -l)
 
-#     if [[ "$sessions" -eq 0 ]]; then
-#         tmux new-session
+    if [[ "$sessions" -eq 0 ]]; then
+        tmux new-session
+    else
+        tmux attach-session \; choose-session
+    fi
+fi
+
+# # ==========================================================
+# # Auto Zellij
+# # ==========================================================
+# if [[ -z "$ZELLIJ" ]]; then
+#     # Mengambil daftar session yang aktif (hanya nama session-nya saja)
+#     sessions=($(zellij list-sessions --short 2>/dev/null))
+#     session_count=${#sessions[@]}
+
+#     if [[ "$session_count" -eq 0 ]]; then
+#         # Jika tidak ada session aktif, buat baru
+#         zellij
+#     elif [[ "$session_count" -eq 1 ]]; then
+#         # Jika hanya ada 1 session, langsung attach ke session tersebut
+#         zellij attach "${sessions[1]}"
 #     else
-#         tmux attach-session \; choose-session
+#         # Jika ada lebih dari 1 session, tampilkan menu interaktif
+#         echo "\nAda beberapa session Zellij yang aktif. Pilih salah satu:"
+#         select session in "${sessions[@]}" "Buat Session Baru"; do
+#             if [[ "$session" == "Buat Session Baru" ]]; then
+#                 zellij
+#                 break
+#             elif [[ -n "$session" ]]; then
+#                 zellij attach "$session"
+#                 break
+#             else
+#                 echo "Pilihan tidak valid, coba lagi."
+#             fi
+#         done
 #     fi
 # fi
-
-# ==========================================================
-# Auto Zellij (Cara Singkat)
-# ==========================================================
-if [[ -z "$ZELLIJ" ]]; then
-    zellij attach -c
-fi
 
 # eval "$(tv init zsh)"
 

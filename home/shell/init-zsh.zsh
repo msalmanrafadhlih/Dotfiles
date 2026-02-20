@@ -3,17 +3,24 @@
 # ==========================================================
 [[ $- != *i* ]] && return
 
-# ==========================================================
-# Auto TMUX (intentional behavior)
-# ==========================================================
-if [[ -z "$TMUX" ]]; then
-    sessions=$(tmux list-sessions 2>/dev/null | wc -l)
+# # ==========================================================
+# # Auto TMUX (intentional behavior)
+# # ==========================================================
+# if [[ -z "$TMUX" ]]; then
+#     sessions=$(tmux list-sessions 2>/dev/null | wc -l)
 
-    if [[ "$sessions" -eq 0 ]]; then
-        tmux new-session
-    else
-        tmux attach-session \; choose-session
-    fi
+#     if [[ "$sessions" -eq 0 ]]; then
+#         tmux new-session
+#     else
+#         tmux attach-session \; choose-session
+#     fi
+# fi
+
+# ==========================================================
+# Auto Zellij (Cara Singkat)
+# ==========================================================
+if [[ -z "$ZELLIJ" ]]; then
+    zellij attach -c
 fi
 
 # eval "$(tv init zsh)"

@@ -14,9 +14,14 @@
       "python" 
       "rust" 
       "typescript" 
+      "marksman"
       "css" 
-      "kotlin" 
+      "scss"
+      "kotlin"
       "java" 
+      "xml"
+      "sql"
+      "jsons"
       "bash" # Untuk Shell/Zsh script
     ];
 
@@ -26,7 +31,6 @@
         inactive_opacity = 0.5;
       };
       bottom_dock_layout = "contained"; # contained, full, left_aligned, right_aligned
-      agent_font_size = 8;
       allow_rewrap = "in_comments"; # in_comments, in_selections, anywhere
       auto_indent = true;
       auto_indent_on_paste = true;

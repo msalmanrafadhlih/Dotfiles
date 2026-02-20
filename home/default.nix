@@ -34,7 +34,7 @@
 	# ./eww 
 	# ./nano 
 	# ./tmux 
-	# ./rmpc 
+	./rmpc 
 	# ./ncmpcpp 
 	./btop 
 	# ./com.kdocker 

@@ -20,7 +20,6 @@ let
 		
 		nano = "nano";
 		tmux = "tmux";
-		rmpc = "rmpc";
 		# ncmpcpp = "ncmpcpp";
 		fastfetch = "fastfetch";
 		"com.kdocker" = "com.kdocker";

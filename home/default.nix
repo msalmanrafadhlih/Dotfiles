@@ -33,7 +33,7 @@
 	# ./dunst 
 	# ./eww 
 	# ./nano 
-	# ./tmux 
+	./tmux 
 	./rmpc 
 	# ./ncmpcpp 
 	./btop 

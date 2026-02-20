@@ -118,7 +118,7 @@
       # }
     ];
   };
-
-  # Memastikan xclip tersedia untuk copy-paste
-  home.packages = [ pkgs.xclip ];
+  imports = [
+    ./tmux-sessions.nix
+  ];
 }

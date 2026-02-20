@@ -51,7 +51,7 @@
       };
     };
 
-    themes = import ./themes.nix ;
+    # themes = import ./themes.nix ;
   };
 
   # zellij's auto tab renaming 

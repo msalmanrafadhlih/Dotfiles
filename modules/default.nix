@@ -53,7 +53,6 @@ in
 	  ./run.nix
 	  # ./suckless.nix
 	  ./tar.nix
-	  ./tmux-sessions.nix
 	  ./volume.nix
 	  ./xsession.nix
 	  # ./xdg-home.nix # backup error make me sick!!

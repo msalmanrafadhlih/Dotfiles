@@ -1,10 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.Packages = [
+  home.packages = with pkgs; [
     ###################################################
     ###########    SESSION MANAGER    ################# 
-    (pkgs.writeShellScriptBin "tmux-session-manager" ''
+    (writeShellScriptBin "tmux-session-manager" ''
       #!/usr/bin/env bash
     
       # 1. Ambil nama sesi saat ini agar tidak muncul di daftar

@@ -6,9 +6,9 @@
     terminal = "tmux-256color";
     mouse = true;
 
-    plugins = with pkgs.tmuxPlugins; [
-      tpm
-    ];
+    # plugins = with pkgs.tmuxPlugins; [
+    #   # tpm
+    # ];
 
     extraConfig = ''
       # Prefix

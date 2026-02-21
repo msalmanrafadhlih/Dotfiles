@@ -23,9 +23,17 @@
     bind -n C-M-Down resize-pane -D
 
     # Copy mode
+    set -g mouse on
     setw -g mode-keys vi
     bind-key -T copy-mode-vi v send -X begin-selection
     bind-key -T copy-mode-vi r send -X rectangle-toggle
-    bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "xclip -in -selection clipboard"
+    bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "xclip -selection clipboard -in"
+
+    # Mouse Clipboard Copy
+    unbind -T copy-mode-vi MouseDragEnd1Pane
+    bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe-and-cancel "xclip -selection clipboard -in"
+
+    set -g set-clipboard on
+    set -g allow-passthrough on
   '';
 }

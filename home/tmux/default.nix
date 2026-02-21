@@ -22,9 +22,6 @@
 
       # Reload config
       bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded!"
-
-      # RGB support
-      set -as terminal-features ",tmux-256color:RGB"
     '';
   };
 

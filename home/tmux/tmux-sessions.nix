@@ -14,7 +14,7 @@
       # ctrl-d akan kill sesi yang disorot, lalu me-reload daftar sesi fzf
       output=$(tmux list-sessions -F '#S' 2>/dev/null | grep -v -x "$current" | \
         fzf --reverse --prompt="Session> " --print-query \
-            --header "Enter: Pindah/Buat | Ctrl-D: Hapus | Ctrl-J/K: Navigasi" \
+            --header "Enter: Switch/Create | Ctrl-D: Del | Ctrl-J/K: Navigator" \
             --bind "ctrl-j:down,ctrl-k:up" \
             --bind "ctrl-d:execute(tmux kill-session -t {})+reload(tmux list-sessions -F '#S' 2>/dev/null | grep -v -x '$current')" \
       )

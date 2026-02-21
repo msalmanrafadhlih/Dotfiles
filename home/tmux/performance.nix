@@ -8,11 +8,10 @@
     set -g focus-events on
     set -g display-time 4000
 
-    set -g allow-passthrough on
-    set -as terminal-features ',st-256color:sixel'
-    set -as terminal-overrides ',st-256color:Sxl'
     # Pastikan environment variable terminal diteruskan
-    set -ga update-environment TERM
-    set -ga update-environment TERM_PROGRAM
+    # RGB support
+    set -g default-terminal "tmux-256color"
+    set -ga terminal-features ",*:RGB"
+    set -ga terminal-features ",*:sixel"
   '';
 }

@@ -12,20 +12,9 @@
       -w 80% \
       -h 80% \
       -E "lazygit"
-      
-    #### Session Manager
-    bind C-s display-popup -w 60% -h 40% -T " Switch / Create / Delete " -E " \
-      tmux list-sessions -F '#S' | \
-      grep -v \"^$(tmux display-message -p '#S')\$\" | \
-      fzf --reverse --header 'Enter: Switch/New | Ctrl-d: Delete | Ctrl-c: Cancel' \
-          --print-query \
-          --bind 'ctrl-d:execute(tmux kill-session -t {})+reload(tmux list-sessions -F \"#S\" | grep -v \"^$(tmux display-message -p \"#S\")\$\")' | \
-      tail -n 1 | \
-      xargs -I {} sh -c 'tmux switch-client -t \"{}\" 2>/dev/null || (tmux new-session -d -s \"{}\" && tmux switch-client -t \"{}\")' \
-    "
 
     ###### Session Manager (Switch, Create, Delete)
-    bind C-; display-popup \
+    bind C-s display-popup \
       -w 60% -h 40% -T " Session Manager " \
       -E "tmux-session-manager"  
 

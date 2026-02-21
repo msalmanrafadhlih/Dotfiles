@@ -10,5 +10,6 @@
     bind -n M-o switch-client -l
 
     bind . command-prompt -I "#S" "rename-session '%%'"
+    bind s choose-tree -Zs
   '';
 }

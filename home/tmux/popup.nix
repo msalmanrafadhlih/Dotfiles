@@ -3,8 +3,7 @@
   programs.tmux.extraConfig = ''
     ##### NIXOS REBUILD ####
     bind w display-popup \
-      -d "#{pane_current_path}" \
-      -w 30% -h 30% -x 100% -y 14% \
+      -w 90% -h 90% \
       -E "$SHELL -ic 'SAVEFLAKE; read'"
 
     ##### LazyGit ##### 

@@ -1,49 +1,43 @@
+{ pkgs, ... }:
+
 {
-  home.file.".local/bin/tmux-sessions.sh" = {
-	text = ''
-#!/usr/bin/env bash
-
-PERM_FILE="$HOME/.config/tmux/permanent-sessions.txt"
-mkdir -p "$(dirname "$PERM_FILE")"
-touch "$PERM_FILE"
-
-ADD_OPTION="➕ Add new permanent session"
-
-case "$@" in
-    "") # mode list (print ke rofi)
-        PERMANENT_SESSIONS=$(cat "$PERM_FILE")
-        TMUX_SESSIONS=$(tmux list-sessions -F "#{session_name}" 2>/dev/null)
-        printf "%s\n" $PERMANENT_SESSIONS $TMUX_SESSIONS "$ADD_OPTION" | sort -u
-        ;;
-    "$ADD_OPTION") # tambah permanen baru
-        NEW_SESSION=$(rofi -dmenu -p "New session name")
-        [ -z "$NEW_SESSION" ] && exit 0
-        echo "$NEW_SESSION" >> "$PERM_FILE"
-        if tmux has-session -t "$NEW_SESSION" 2>/dev/null; then
-            exec tmux attach -t "$NEW_SESSION"
-        else
-            if [ -z "$(tmux list-sessions 2>/dev/null)" ]; then
-                exec st -e tmux new -s "$NEW_SESSION"
-            else
-                exec tmux new -s "$NEW_SESSION"
-            fi
-        fi
-        ;;
-    *) # pilih session dari list
-        SESSION="$@"
-        if tmux has-session -t "$SESSION" 2>/dev/null; then
-            exec tmux attach -t "$SESSION"
-        else
-            if [ -z "$(tmux list-sessions 2>/dev/null)" ]; then
-                exec st -e tmux new -s "$SESSION"
-            else
-                exec tmux new -s "$SESSION"
-            fi
-        fi
-        ;;
-esac
-
-	'';
-	executable = true;
-  };
+  environment.systemPackages = [
+    ###################################################
+    ###########    SESSION MANAGER    ################# 
+    (pkgs.writeShellScriptBin "tmux-session-manager" ''
+      #!/usr/bin/env bash
+    
+      # 1. Ambil nama sesi saat ini agar tidak muncul di daftar
+      current=$(tmux display-message -p '#S')
+    
+      # 2. Jalankan fzf dengan bind navigasi dan hapus (delete)
+      # ctrl-d akan kill sesi yang disorot, lalu me-reload daftar sesi fzf
+      output=$(tmux list-sessions -F '#S' 2>/dev/null | grep -v -x "$current" | \
+        fzf --reverse --prompt="Session> " --print-query \
+            --header "Enter: Pindah/Buat | Ctrl-D: Hapus | Ctrl-J/K: Navigasi" \
+            --bind "ctrl-j:down,ctrl-k:up" \
+            --bind "ctrl-d:execute(tmux kill-session -t {})+reload(tmux list-sessions -F '#S' 2>/dev/null | grep -v -x '$current')" \
+      )
+    
+      # 3. Parsing output dari fzf --print-query
+      # Baris 1: teks yang diketik (query)
+      # Baris 2: item yang dipilih dari list (jika ada)
+      query=$(echo "$output" | head -n 1)
+      selected=$(echo "$output" | tail -n 1)
+    
+      # Batal jika user menekan Esc/Ctrl-c (output kosong)
+      if [ -z "$query" ] && [ -z "$selected" ]; then
+          exit 0
+      fi
+    
+      # Prioritaskan item yang dipilih, jika tidak ada, gunakan teks yang diketik
+      target="''${selected:-$query}"
+    
+      # 4. Eksekusi: Coba pindah sesi. Jika gagal (sesi tidak ada), buat baru lalu pindah.
+      if ! tmux switch-client -t "$target" 2>/dev/null; then
+          tmux new-session -d -s "$target"
+          tmux switch-client -t "$target"
+      fi
+    '')
+  ];
 }

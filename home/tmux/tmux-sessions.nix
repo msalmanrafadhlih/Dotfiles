@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = [
+  home.Packages = [
     ###################################################
     ###########    SESSION MANAGER    ################# 
     (pkgs.writeShellScriptBin "tmux-session-manager" ''

@@ -74,7 +74,6 @@
   GBG = "sudo nix-collect-garbage";
   OPTIMISE = "sudo nix-store --optimise";
   GC = "sudo nix-store --gc";
-  CLEANHOME = "rm -rf ~/.cache/nix && rm -rf /tmp/nix-build-* && rm -rf ~/.local/share/Trash";
   REPAIR = "sudo nix-store --verify --check-contents --repair";
   CLEAR = "clear";
   clar = "clear";

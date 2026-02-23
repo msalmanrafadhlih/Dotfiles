@@ -112,6 +112,7 @@
         ],
         "nur": "nur",
         "spicetify-nix": "spicetify-nix",
+        "stable": "stable",
         "stylix": "stylix",
         "textfox": "textfox",
         "yazi-compress": "yazi-compress",
@@ -120,11 +121,11 @@
         "zjstatus": "zjstatus"
       },
       "locked": {
-        "lastModified": 1771767407,
-        "narHash": "sha256-8U/YmpnoyrFnrsWKyuiXHPnVvP52eKPTV0KRUxXFUd0=",
+        "lastModified": 1771844789,
+        "narHash": "sha256-Qrp4mYTAq82Ybr/aOz16IDBswKpE9sxym12dXaIC3RE=",
         "owner": "msalmanrafadhlih",
         "repo": "Dotfiles",
-        "rev": "b7141ddc6946eefebfc0661e7691be4f342f0ff6",
+        "rev": "8aa173463d63d23ccfd2c2bf0e16f0203e088d7d",
         "type": "github"
       },
       "original": {
@@ -334,70 +335,6 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1770197578,
-        "narHash": "sha256-AYqlWrX09+HvGs8zM6ebZ1pwUqjkfpnv8mewYwAo+iM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1728492678,
-        "narHash": "sha256-9UTxR8eukdg+XZeHgxW5hQA9fIKHsKCdOIUycTryeVw=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "5633bcff0c6162b9e4b5f1264264611e950c8ec7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1771008912,
-        "narHash": "sha256-gf2AmWVTs8lEq7z/3ZAsgnZDhWIckkb+ZnAo5RzSxJg=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "a82ccc39b39b621151d6732718e3e250109076fa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_4": {
-      "locked": {
-        "lastModified": 1765934234,
-        "narHash": "sha256-pJjWUzNnjbIAMIc5gRFUuKCDQ9S1cuh3b2hKgA7Mc4A=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "af84f9d270d404c17699522fab95bbf928a2d92f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_5": {
-      "locked": {
         "lastModified": 1771369470,
         "narHash": "sha256-0NBlEBKkN3lufyvFegY4TYv5mCNHbi5OmBDrzihbBMQ=",
         "owner": "nixos",
@@ -465,7 +402,7 @@
       "inputs": {
         "Bloodrage-plymouth": "Bloodrage-plymouth",
         "dotfiles": "dotfiles",
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs",
         "st-nix": "st-nix"
       }
     },
@@ -493,7 +430,10 @@
     },
     "spicetify-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": [
+          "dotfiles",
+          "nixpkgs"
+        ],
         "systems": "systems_2"
       },
       "locked": {
@@ -527,6 +467,22 @@
       "original": {
         "owner": "TQ-See",
         "repo": "st-flexipatch",
+        "type": "github"
+      }
+    },
+    "stable": {
+      "locked": {
+        "lastModified": 1771714954,
+        "narHash": "sha256-nhZJPnBavtu40/L2aqpljrfUNb2rxmWTmSjK2c9UKds=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "afbbf774e2087c3d734266c22f96fca2e78d3620",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -628,7 +584,10 @@
     "textfox": {
       "inputs": {
         "firefox-addons": "firefox-addons",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": [
+          "dotfiles",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1771103358,
@@ -760,7 +719,10 @@
     "zen-browser": {
       "inputs": {
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": [
+          "dotfiles",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1771222275,
@@ -780,7 +742,10 @@
       "inputs": {
         "crane": "crane",
         "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": [
+          "dotfiles",
+          "nixpkgs"
+        ],
         "rust-overlay": "rust-overlay"
       },
       "locked": {

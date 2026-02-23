@@ -5,7 +5,7 @@
   users.mutableUsers = false;
   users.users.${username} = {
     isNormalUser = true;
-    description = "Tquilla - Main User";
+    description = "Tquilla - Deleveloper";
     shell = pkgs.zsh;
 
     #######################

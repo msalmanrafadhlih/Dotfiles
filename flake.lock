@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770702136,
-        "narHash": "sha256-f8WrrIqM96yL5OO7xvXccoWfVLlyFNsmgXOEXUGrYWs=",
+        "lastModified": 1771583213,
+        "narHash": "sha256-+1OZxnxtUMkcMau4BAoOr3wJ8rGfym65cJukuusoYqA=",
         "owner": "TQ-See",
         "repo": "NixPlymouth-Bloodrage",
-        "rev": "c01cd69a1870bdc574b98a570194a9b6f63c72eb",
+        "rev": "33d8b1262ee0f7ab20ca9e48f5fa79fae45f91e8",
         "type": "github"
       },
       "original": {
@@ -120,11 +120,11 @@
         "zjstatus": "zjstatus"
       },
       "locked": {
-        "lastModified": 1771517337,
-        "narHash": "sha256-RMNBK6t0WgNNlgMzOs/T54WCrXAjyVBHqn1Sbm3b104=",
+        "lastModified": 1771767407,
+        "narHash": "sha256-8U/YmpnoyrFnrsWKyuiXHPnVvP52eKPTV0KRUxXFUd0=",
         "owner": "msalmanrafadhlih",
         "repo": "Dotfiles",
-        "rev": "86e9dfc18c1d8e3c53a6a9b476732219c4445589",
+        "rev": "b7141ddc6946eefebfc0661e7691be4f342f0ff6",
         "type": "github"
       },
       "original": {
@@ -398,11 +398,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1771008912,
-        "narHash": "sha256-gf2AmWVTs8lEq7z/3ZAsgnZDhWIckkb+ZnAo5RzSxJg=",
+        "lastModified": 1771369470,
+        "narHash": "sha256-0NBlEBKkN3lufyvFegY4TYv5mCNHbi5OmBDrzihbBMQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a82ccc39b39b621151d6732718e3e250109076fa",
+        "rev": "0182a361324364ae3f436a63005877674cf45efb",
         "type": "github"
       },
       "original": {

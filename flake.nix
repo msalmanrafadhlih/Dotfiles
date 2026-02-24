@@ -26,7 +26,7 @@
   let
     ############################
     # - Set your System, Username and Hostname here!!
-    system = "x86_64-linux";
+    system = builtins.currentSystem;
     username = "tquilla";
     hostname = "nixos";
     flakePath = self.outPath;

@@ -1,5 +1,5 @@
 # ./modules/configuration.nix
- 
+{ system, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -32,7 +32,7 @@
   ];
 
 
-  nixpkgs.hostPlatform = "x86_64-linux";
+  nixpkgs.hostPlatform = system;
   system.stateVersion = "25.11";
   security.rtkit.enable = true;
 }

@@ -26,7 +26,7 @@
   let
     ############################
     # - Set your System, Username and Hostname here!!
-    system = builtins.currentSystem;
+    system = "x86_64-linux";
     username = "tquilla";
     hostname = "nixos";
     flakePath = self.outPath;
@@ -35,7 +35,7 @@
     nixosConfigurations.${hostname} =
       nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs username hostname flakePath; };
+        specialArgs = { inherit inputs username hostname flakePath system; };
         modules = [
           ########################
           ## SYSTEM CONFIGURATIONS

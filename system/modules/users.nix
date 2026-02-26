@@ -2,7 +2,7 @@
 { pkgs, username, ... }:
 
 {
-  users.mutableUsers = false;
+  users.mutableUsers = true;
   users.users.${username} = {
     isNormalUser = true;
     description = "Tquilla - Deleveloper";
@@ -11,7 +11,7 @@
     #######################
     # 'mkpasswd -m sha-512'
     # or 'openssl passwd -6'
-    hashedPassword = "$6$TG4zdr62ukT/bMui$7wMXJRJeLFI2f7LhwnXqiqCWepV6Akq0F6Y91I.QY7z4xrZwVfz8vdhjQ3SUyrMfb/hCeSJBpIQQvZJlzGuXO0";
+    hashedPassword = "$6$4y45xddEerGmBn10$syHxREmf4Ky37ra6ULFwar.I9a/Bts/5k/OxztP3XWhDT.BQ3yEP0z3BUfLXeft4FJERy3RZo.AcaoL6L/H7i0";
 
     extraGroups = [
       "wheel"

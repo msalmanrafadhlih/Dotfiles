@@ -1,6 +1,6 @@
 # ./modules/programs.nix
 # programs & system packages
-{ pkgs, ... }:
+{ pkgs, system, inputs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -8,6 +8,7 @@
 
   programs = {
     # firefox.enable = true;
+    xytz.enable = true;
     thunderbird.enable = true;
     st-flexipatch.enable = true;
 
@@ -21,6 +22,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    inputs.rip.packages.${pkgs.stdenv.hostPlatform.system}.default 
+
     # ======= CLI TOOLS
     gh # Github-Cli
     ripgrep
@@ -80,5 +83,6 @@
     nixd # nix language
     # taplo # toml
     # yaml-language-server # yaml
+
   ];
 }

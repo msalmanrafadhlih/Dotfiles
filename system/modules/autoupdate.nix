@@ -12,7 +12,7 @@
     ];
 
     dates = "weekly";
-    operation = "boot";
+    operation = "switch";
     fixedRandomDelay = true;
     randomizedDelaySec = "1h";
 

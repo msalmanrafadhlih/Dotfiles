@@ -1,5 +1,5 @@
 # ./modules/configuration.nix
-{ system, ... }:
+{ system, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix

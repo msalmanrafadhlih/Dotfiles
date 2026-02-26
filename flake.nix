@@ -3,14 +3,27 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    rip = {
+      url = "github:cesarferreira/rip";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    xytz = {
+      url = "github:TQ-See/xytz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     st-nix = {
       url = "github:TQ-See/st-flexipatch";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     Bloodrage-plymouth = {
       url = "github:TQ-See/NixPlymouth-Bloodrage";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     dotfiles = {
       ################################
       # change 'bspwm' to dotfiles u want to use
@@ -45,6 +58,7 @@
           ## HOME-MANAGER CONFIGURATIONS
           inputs.dotfiles.nixosModules.default
           inputs.st-nix.nixosModules.default
+          inputs.xytz.nixosModules.default
 
           ########################
           { ## 🧩 OVERLAYS

@@ -27,6 +27,7 @@
     # ======= CLI TOOLS
     gh # Github-Cli
     ripgrep
+    git-lfs
     bat
     acpi # Show Battery Information
     yazi

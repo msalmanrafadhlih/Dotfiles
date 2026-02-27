@@ -11,10 +11,10 @@
     bind x kill-pane
 
     # Navigation
-    bind -n C-h select-pane -L
-    bind -n C-l select-pane -R
-    bind -n C-k select-pane -U
-    bind -n C-j select-pane -D
+    bind h select-pane -L
+    bind l select-pane -R
+    bind k select-pane -U
+    bind j select-pane -D
 
     # Resize
     bind -n C-M-h resize-pane -L

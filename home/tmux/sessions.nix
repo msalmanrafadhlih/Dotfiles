@@ -6,7 +6,7 @@
     bind-key K confirm-before -p "Kill session #S? (y/n)" kill-session
 
     bind -n M-j switch-client -p
-    bind -n M-K switch-client -n
+    bind -n M-k switch-client -n
     bind -n M-o switch-client -l
 
     bind . command-prompt -I "#S" "rename-session '%%'"

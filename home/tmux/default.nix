@@ -31,7 +31,7 @@
       set -g display-time 4000
 
       # RGB support
-      set -g default-terminal "tmux-256color"
+      set -g default-terminal "xterm-256color"
       set -ga terminal-features ",*:RGB"
       set -ga terminal-features ",*:sixel"
 

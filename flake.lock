@@ -121,11 +121,11 @@
         "zjstatus": "zjstatus"
       },
       "locked": {
-        "lastModified": 1772267362,
-        "narHash": "sha256-C2zBRJnThcZK0uMVl2ErygF/GA5OH1GPb4xG1tP/P+U=",
+        "lastModified": 1772286443,
+        "narHash": "sha256-FoDpjbclSCOAN/cCRQ+xXE1cNRjZMTRRHtYoYgtOwaI=",
         "owner": "msalmanrafadhlih",
         "repo": "Dotfiles",
-        "rev": "28f1c2d79b3c4b94ff1dd33ae914362647950ca2",
+        "rev": "4b05028d03e969f9ce780619d1f9b7bdf8d4516c",
         "type": "github"
       },
       "original": {
@@ -376,11 +376,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772267083,
-        "narHash": "sha256-eTacXTRnFmOW3H80/UQg+nJlbcvpb9mBo+fG6Rkzmnw=",
+        "lastModified": 1772281108,
+        "narHash": "sha256-xcrs6WcsCZFaJrTKiFrE+8rZPLmZBdDikkk4IBCJGDU=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "81d07730c45a223264a61bbcda491b7176704b4c",
+        "rev": "87b4f53f7c7a8d7036924f354c69da90ec552aab",
         "type": "github"
       },
       "original": {

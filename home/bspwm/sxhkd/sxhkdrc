@@ -185,9 +185,9 @@ super + Tab
         -show window \
         -theme $HOME/.config/rofi/themes/window.rasi \
         -window-hide-active-window true \
+        -kb-accept-entry "!Super+Tab,!Super_L" \
         -kb-element-next "super-Tab" \
 		# -window-thumbnail 
-
 
 # ==================================================  OTHER
 # ---------------------------------------------------------  Brightness

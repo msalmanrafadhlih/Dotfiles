@@ -3,7 +3,7 @@
   tquilla = "colorscript -r";
   NIXOS = "cd ~/.dotfiles/system && ls";
   HOME = "cd ~/.dotfiles/$XDG_CURRENT_DESKTOP && ls";
-  
+
   GRAPH = "git log --oneline --decorate --graph --all";
   GIT = "git add . && git commit -m";
 
@@ -15,14 +15,14 @@
   TV = "nix run nixpkgs#television";
 
   ## SYSTEM CONFIGURATIONS
-  USER = "hx ~/.dotfiles/system/system/modules/users.nix";
-  ALIAS = "hx ~/.dotfiles/system/system/modules/aliases.nix";
-  SYSINSTALL = "hx ~/.dotfiles/system/system/modules/system-packages.nix";
-  NIX = "hx ~/.dotfiles/system/system/configuration.nix";
-  HNIX = "bat ~/.dotfiles/system/system//hardware-configuration.nix";
+  USER = "hx ~/.dotfiles/system/modules/users.nix";
+  ALIAS = "hx ~/.dotfiles/system/modules/aliases.nix";
+  SYSINSTALL = "hx ~/.dotfiles/system/modules/system-packages.nix";
+  NIX = "hx ~/.dotfiles/system/modules/configuration.nix";
+  HNIX = "bat ~/.dotfiles/system/modules/hardware-configuration.nix";
   FLAKE = "hx ~/.dotfiles/system/flake.nix";
   LOCK = "bat ~/.dotfiles/system/flake.lock";
-  SYSMDL = "yazi ~/.dotfiles/system/system/modules";
+  SYSMDL = "yazi ~/.dotfiles/system/modules";
 
   ## USER CONFIGURATIONS {EDIT}
   DOTS = "yazi ~/.dotfiles/$XDG_CURRENT_DESKTOP/home";
@@ -104,5 +104,3 @@
   REBOOT = "sudo reboot";
   OFF = "poweroff";
 }
-
-

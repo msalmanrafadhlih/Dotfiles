@@ -27,10 +27,10 @@
     dotfiles = {
       ################################
       # change 'bspwm' to dotfiles u want to use
-      #### Available Dotfiles = 
-      #### bspwm, hyrpland, niri, 
+      #### Available Dotfiles =
+      #### bspwm, hyrpland, niri,
       url = "github:msalmanrafadhlih/Dotfiles/bspwm";
-      # url = "path:./bspwm";
+      # url = "path:./home"; # for testing
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -52,7 +52,7 @@
         modules = [
           ########################
           ## SYSTEM CONFIGURATIONS
-          ./system/configuration.nix
+          ./modules/configuration.nix
 
           ########################
           ## HOME-MANAGER CONFIGURATIONS
@@ -70,7 +70,3 @@
       };
   };
 }
-
-
-
-

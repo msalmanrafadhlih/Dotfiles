@@ -41,7 +41,7 @@ while IFS= read -r url || [ -n "$url" ]; do
     [ -z "$url" ] && continue
 
     printf -v padded_count "%03d" $count
-    temp_name="materi_${padded_count}.html"
+    temp_name="materi_''${padded_count}.html"
 
     echo "[$padded_count] Fetching: $url"
 
@@ -60,7 +60,7 @@ echo "Mengonversi ke EPUB menggunakan Pandoc..."
 
 # Menggabungkan semua HTML menjadi satu EPUB
 # --toc untuk daftar isi, --standalone untuk dokumen lengkap
-pandoc "${html_files[@]}" \
+pandoc "''${html_files[@]}" \
     -f html \
     -t epub \
     --toc \

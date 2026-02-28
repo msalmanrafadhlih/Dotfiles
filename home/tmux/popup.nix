@@ -15,14 +15,6 @@
       -T " Git " \
       -E "lazygit"
 
-    ##### Btop++ #####
-    unbind C-b
-    bind C-b display-popup \
-      -w 100 \
-      -h 35 \
-      -T " Btop ++ " \
-      -E "btop -p 1"
-
     ##### Youtube #####
     bind C-y display-popup \
       -w 100 \

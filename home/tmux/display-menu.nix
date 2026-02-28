@@ -50,6 +50,7 @@ set-option -g command-alias[110] 'rip=display-menu -T "#[align=centre] 󰍜 RIP:
   "19   STOP"        9  "signal-stop" \
   "-"                -  "" \
   "PORTS"            p  "display-popup -w 65 -h 10 -y 100% -x C -B -T \" PORTS \" -E \"rip --ports --live\"" \
+  "BTOP ++"          b  "display-popup -w 100 -h 35 -T \" Btop ++ \" -E \"btop -p 1\"" \
   "-"                -  "" \
   "↩ Quit"           q  ""'
 

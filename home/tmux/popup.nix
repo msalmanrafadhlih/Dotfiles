@@ -51,7 +51,7 @@
       -w 52 -h 90% \
       -x R -y 100% \
       -T "#[align=center] AI Agent " \
-      -E "$SHELL -ic '~/.local/bin/Chat-Ai; read'"
+      -E "ai-chat"
 
     #### GeminiAi ######
     bind C-g display-popup \

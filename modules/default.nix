@@ -34,32 +34,32 @@ in
 
 	imports = [
 	  ./applications.nix
-	  ./background.nix
-	  ./bat.nix
-	  ./battery.nix
-	  ./bookmarks.nix
-	  ./brightness.nix
-	  ./colorscript.nix
 	  ./git.nix
-	  ./github-repos.nix
-	  # ./git-prompt.nix
-	  ./img-compress.nix
-	  ./media.nix
-	  ./mpd.nix # ----------
-	  ./nanorc.nix
-	  ./opencam.nix
-	  ./packages.nix
-	  ./picom.nix
-	  ./reddit.nix
-	  ./run.nix
-	  # ./suckless.nix
-	  ./tar.nix
-	  ./volume.nix
 	  ./xsession.nix
-	  # ./xdg-home.nix # backup error make me sick!!
-	  ./xyz.nix
-	  ./youtube.nix
+	  ./mpd.nix 
+	  ./packages.nix
 
+	  ./scripts/reddit.nix
+	  ./scripts/opencam.nix
+	  ./scripts/battery.nix
+	  ./scripts/bookmarks.nix
+	  ./scripts/github-repos.nix
+	  ./scripts/pandoc.nix
+	  ./scripts/media.nix
+	  ./scripts/run.nix
+	  ./scripts/volume.nix
+	  ./scripts/01chat.nix
+	  ./scripts/xyz.nix
+	  ./scripts/youtube.nix
+	  ./scripts/tar.nix
+	  ./scripts/background.nix
+	  ./scripts/img-compress.nix
+	  ./scripts/brightness.nix
+	  ./scripts/colorscript.nix
+
+	  # ./suckless.nix
+	  # ./git-prompt.nix
+	  # ./xdg-home.nix # backup error make me sick!!
 	  inputs.stylix.homeModules.stylix
   ];
 }

@@ -32,5 +32,6 @@ in
   imports = [
     ./show-polybar.nix
     ./hide-polybar.nix
+    ./picom.nix
   ];
 }

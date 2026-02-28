@@ -15,4 +15,6 @@ in
     create_symlink "${dotfiles_path}/${subpath}";
     recursive = true;
   }) configs;
+
+  imports = [ ./nanorc.nix ];
 }

@@ -2,6 +2,7 @@
 { 
  imports = [
   ./bspwm
+  ./bat
   ./fastfetch
   ./zed-editor
   ./gemini

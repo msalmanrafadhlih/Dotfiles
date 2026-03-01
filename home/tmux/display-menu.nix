@@ -6,7 +6,8 @@ set-option -g command-alias[99] 'main-menu=display-menu -T "#[align=centre] 󰍜
   "  DevShell"        d  "devshell-menu" \
   "❅  Flakes"          f  "flake-menu" \
   ">_ Scripts"         s  "scripts" \
-  "♠  Keybinds"       ?  "shortcuts" \
+  "📌 Notes"           n  "notes" \
+  "♠  Keybinds"        ?  "shortcuts" \
   "-"                  -  "" \
   "❌ Quit"            q  ""'
 
@@ -33,6 +34,11 @@ set-option -g command-alias[102] 'scripts=display-menu -T "#[align=centre] ⚡ S
   "🧩 Aliases"         1  "display-popup -w 90% -h 90%  -y C -T \"Flake System\" -E \"$SHELL -ic ALIAS;read\"" \
   "-"                  -  "" \
   "↩ Back"             b  "main-menu"'
+
+# 5. Notes
+set-option -g command-alias[103] 'notes=display-menu -T "#[align=centre] 📌 Notes " -x C -y C \
+  "Rust Learning" r "new-window -n Rust \"hx ~/.repos/Learning/Rust/Rustdoc.md\"" \
+  "↩ Back"        b "main-menu"'
 
 bind m main-menu
 

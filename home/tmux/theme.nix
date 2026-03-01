@@ -14,7 +14,8 @@
     set -g status-left ""
 
     set -g status-right-length 120
-    set -g status-right '#[fg=magenta]#[fg=default,bg=magenta] #[fg=white,bg=black] #W #[fg=magenta]#[fg=default,bg=magenta] #[fg=white,bg=black] #{p:pane_current_path} #[fg=green]#[fg=default,bg=green] #[fg=white,bg=black] #S '
+    set -g status-right '#[fg=magenta]#[fg=default,bg=magenta] #[fg=white,bg=black] #S #[fg=magenta]#[fg=default,bg=magenta] #[fg=white,bg=black] #{p:pane_current_path} '
+    # set -g status-right '#[fg=magenta]#[fg=default,bg=magenta] #[fg=white,bg=black] #W #[fg=magenta]#[fg=default,bg=magenta] #[fg=white,bg=black] #{p:pane_current_path} #[fg=green]#[fg=default,bg=green] #[fg=white,bg=black] #S '
 
     set -g window-status-separator "#[bg=default] "
     set -g window-status-current-format "#[fg=white,bg=black] #W #[fg=black,bg=blue] #I#[fg=blue,bg=default]"

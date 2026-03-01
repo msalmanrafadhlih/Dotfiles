@@ -19,14 +19,14 @@ set-option -g command-alias[104] 'launch=display-menu -T "#[align=centre] ^ Laun
   "↩ Back"             b  "main-menu"'
 
 # 2. DevShell Submenu Alias
-set-option -g command-alias[100] 'devshell-menu=display-menu -T "#[align=centre]   DevShell " -x C -y C \
+set -g command-alias[0] 'devshell-menu=display-menu -T "#[align=centre]   DevShell " -x C -y C \
   "-"                  -  "" \
-  "📱 Mobile Dev"      1  "new-window -n mobile \"cd ~/.repos/MobileDevelopment\"" \
-  "🦀 Rust Dev"        2  "new-window -n rust \"cd ~/.repos/RustDevelopment\"" \
-  "🌐 Web Dev"         3  "new-window -n web \"cd ~/.repos/WebDevelopment\"" \
+  "📱 Mobile Dev"      1  "new-session -d -s mobile -c ~/.repos/MobileDevelopment \; switch-client -t mobile" \
+  "🦀 Rust Dev"        2  "new-session -d -s rust -c ~/.repos/RustDevelopment \; switch-client -t rust" \
+  "🌐 Web Dev"         3  "new-session -d -s web -c ~/.repos/WebDevelopment \; switch-client -t web" \
   "-"                  -  "" \
   "↩ Back"             b  "main-menu"'
-
+  
 # 3. Flake Submenu Alias
 set-option -g command-alias[101] 'flake-menu=display-menu -T "#[align=centre] 🖧 Configurations " -x C -y C \
   "-"                  -  "" \

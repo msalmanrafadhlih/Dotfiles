@@ -4,12 +4,19 @@
 set-option -g command-alias[99] 'main-menu=display-menu -T "#[align=centre] 󰍜 Main Menu " -x C -y C \
   "-"                  -  "" \
   "  DevShell"        d  "devshell-menu" \
+  "^  Launch"          d  "launch" \
   "❅  Flakes"          f  "flake-menu" \
   ">_ Scripts"         s  "scripts" \
   "📌 Notes"           n  "notes" \
   "♠  Keybinds"        ?  "shortcuts" \
   "-"                  -  "" \
   "❌ Quit"            q  ""'
+
+set-option -g command-alias[104] 'launch=display-menu -T "#[align=centre] ^ Launch " -x C -y C \
+  "-"                  -  "" \
+  "🔪 Process Manager" 1  "rip" \
+  "-"                  -  "" \
+  "↩ Back"             b  "main-menu"'
 
 # 2. DevShell Submenu Alias
 set-option -g command-alias[100] 'devshell-menu=display-menu -T "#[align=centre]   DevShell " -x C -y C \
@@ -37,8 +44,9 @@ set-option -g command-alias[102] 'scripts=display-menu -T "#[align=centre] ⚡ S
 
 # 5. Notes
 set-option -g command-alias[103] 'notes=display-menu -T "#[align=centre] 📌 Notes " -x C -y C \
-  "Rust Learning" r "new-window -n Rust \"hx ~/.repos/Learning/Rust/Rustdoc.md\"" \
-  "↩ Back"        b "main-menu"'
+  "Rust Learning"      r "new-window -n Rust \"hx ~/.repos/Learning/Rust/Rustdoc.md\"" \
+  "NodeJS Learning"    n "new-window -n NodeJS \"hx ~/.repos/Learning/NodeJS/README\"" \
+  "↩ Back"             b "main-menu"'
 
 bind m main-menu
 
@@ -139,8 +147,5 @@ set-option -g command-alias[119] 'signal-stop=display-menu -T "#[align=centre] �
   "sort by name"       4  "display-popup -w 60 -T \" SIGNSTOP \" -E \"rip -s STOP --sort name\"" \
   "-"                  -  "" \
   "↩ back"              q  "rip"'
-
-unbind k
-bind k rip
   '';
 }

@@ -20,10 +20,10 @@ set-option -g command-alias[98] "shortcuts=display-popup -T \" >_ Tmux shortcuts
 \\sCtrl+z         -         Split horizontal
 \\sCtrl+z         x                Kill pane
 
-\\sCtrl + l          Navigate to RIGHT(pane)
-\\sCtrl + h           Navigate to LEFT(pane)
-\\sCtrl + k             Navigate to UP(pane)
-\\sCtrl + j           Navigate to DOWN(pane)
+\\sCtrl+z         l  Navigate to RIGHT(pane)
+\\sCtrl+z         h   Navigate to LEFT(pane)
+\\sCtrl+z         k     Navigate to UP(pane)
+\\sCtrl+z         j   Navigate to DOWN(pane)
 
 \\sCtrl+Alt      h,j,k,l        Resize panes
 \\sCtrl+z           z            (tmux zoom)
@@ -56,20 +56,11 @@ set-option -g command-alias[98] "shortcuts=display-popup -T \" >_ Tmux shortcuts
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 \\s-- POPUPS --
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-\\sCtrl+z        C-r     Ranger File Manager
 \\sCtrl+z        C-s      Session Management
-\\sCtrl+z        C-y      Youtube Doanloader
 \\sCtrl+z        C-w           NixOS Rebuild
-\\sCtrl+z        C-p             ScratchPad2
-\\sCtrl+z        C-g              Gemini Cli
-\\sCtrl+z        C-t              ScratchPad
-\\sCtrl+z         y                  LazyGit
-\\sCtrl+z        C-a                 Chat Ai
-\\sCtrl+z        C-b                 Btop ++
 
 \\s--- MENU ---
 \\sctrl+z         m                Open Menu
-\\sctrl+z         k       Process Management
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 \\s-- PERFORMANCE MODE --
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

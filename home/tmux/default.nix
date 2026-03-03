@@ -58,10 +58,7 @@
     ./theme.nix
 
     # Pop-ups
-    ./popup.nix
     ./display-menu.nix
-    ./shortcuts.nix
-
     ./scripts/tmux-sessions.nix
   ];
 }

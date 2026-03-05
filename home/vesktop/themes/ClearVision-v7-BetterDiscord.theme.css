@@ -15,6 +15,7 @@
 :root {
   /* ACCENT COLORS */
   --main-color: #c80e15; /* main accent color (hex, rgb or hsl) [default: #2780e6] */
+  --normal-color : #DDDDDD;/* Additional Color for normal Text */
   --hover-color: #c80e15; /* hover accent color (hex, rgb or hsl) [default: #1e63b3] */
   --success-color: #43b581; /* positive accent color (hex, rgb or hsl) [default: #43b581] */
   --danger-color: #982929; /* danger accent color (hex, rgb or hsl) [default: #982929] */
@@ -25,7 +26,7 @@
   --streaming-color: #593695; /* streaming status color (hex, rgb or hsl) [default: #593695] */
   --offline-color: #808080; /* offline/invisible status color (hex, rgb or hsl) [default: #808080] */
   /* APP BACKGROUND */
-  --background-shading-percent: 1%; /* app background shading amount (0 for complete smoothness) [default: 100%] */
+  --background-shading-percent: 0; /* app background shading amount (0 for complete smoothness) [default: 100%] */
   --background-image: url(); /* app background image (link must be HTTPS) [default: url(https://clearvision.github.io/images/sapphire.jpg)]*/
   --background-position: center; /* app background position [default: center] */
   --background-size: cover; /* app background size (px) [default: cover] */
@@ -50,10 +51,10 @@
   --main-font: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif; /* main font for app (font must be installed) [default: gg sans, Helvetica Neue, Helvetica, Arial, sans-serif] */
   --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace; /* font for codeblocks (font must be installed) [default: Consolas, Liberation Mono, Menlo, Courier, monospace] */
   /* CHANNEL COLORS */
-  --channel-normal: var(--interactive-normal); /* channel text color [default: var(--interactive-normal)] */
-  --channel-muted: var(--interactive-muted); /* muted channel text color [default: var(--interactive-muted)] */
-  --channel-hover: var(--interactive-hover); /* hovered channel text color [default: var(--interactive-hover)] */
-  --channel-selected: var(--interactive-active); /* selected channel text color [default: var(--interactive-active)] */
+  --channel-normal: var(--normal-color); /* channel text color [default: var(--interactive-normal)] */
+  --channel-muted: var(--interactive-normal); /* muted channel text color [default: var(--interactive-muted)] */
+  --channel-hover: var(--main-color); /* hovered channel text color [default: var(--interactive-hover)] */
+  --channel-selected: var(--normal-color); /* selected channel text color [default: var(--interactive-active)] */
   --channel-selected-bg: var(--main-color); /* selected channel background [default: var(--main-color)] */
   --channel-unread: var(--main-color); /* unread channel text color [default: var(--main-color)] */
   --channel-unread-hover: var(--hover-color); /* unread channel hover color [default: var(--hover-color)] */

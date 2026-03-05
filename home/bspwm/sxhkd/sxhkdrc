@@ -43,7 +43,7 @@ super + c
     code -n
 # ---------------------------------------------------------  Open Discord
 super + d
-	gamemoderun vesktop
+	vesktop
 # ---------------------------------------------------------  Dotfiles
 super + e
 	thunar ~/.dotfiles

@@ -14,13 +14,6 @@
       -T " Session Manager " \
       -E "tmux-session-manager"
 
-    # lazygit
-    set-option -g command-alias[119] 'lazygit=display-popup \
-      -d "#{pane_current_path}" \
-      -w 90% \
-      -h 80% \
-      -T " Git " \
-      -E "lazygit"'
 
     set-option -g command-alias[120] 'xytz=display-popup \
       -w 100 \
@@ -60,5 +53,13 @@
       -T "#[align=center] Scratchpad "\
       -w 90% -h 90% -x C -y C \
       -E "$SHELL"'
+
+    # lazygit
+    set-option -g command-alias[126] 'lazygit=display-popup \
+      -d "#{pane_current_path}" \
+      -w 90% \
+      -h 80% \
+      -T " Git " \
+      -E "lazygit"'
    '';
 }

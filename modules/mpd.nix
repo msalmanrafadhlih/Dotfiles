@@ -9,7 +9,7 @@ in
     enable = true;
 
     musicDirectory = "${home}/Music";
-    playlistDirectory = "${home}/Music/Playlists";
+    # playlistDirectory = "${home}/Music/Playlists";
     # dataDir = "${local}/dataDir";
 
     network.listenAddress = "127.0.0.1";

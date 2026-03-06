@@ -12,8 +12,10 @@ in
     playlistDirectory = "${home}/Music";
     dataDir = "${local}/dataDir";
 
-    network.listenAddress = "127.0.0.1";
-    network.port = 6600;
+    # network.listenAddress = "127.0.0.1";
+    # network.port = 6600;
+    network.listenAddress = "any";
+    network.startWhenNeeded = true;
 
     extraConfig = ''
         follow_outside_symlinks "yes"

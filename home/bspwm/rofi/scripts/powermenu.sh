@@ -67,6 +67,8 @@ run_cmd() {
         elif [[ $1 == '--reboot' ]]; then
             systemctl reboot
         elif [[ $1 == '--suspend' ]]; then
+            bash ~/.config/rofi/scripts/Screenlock > /dev/null 2>&1 &
+            sleep 2
             mpc -q pause
             amixer set Master mute
             systemctl suspend

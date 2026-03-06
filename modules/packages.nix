@@ -32,6 +32,7 @@
     
     # CLI TOOLS
 	  ani-cli
+	  go-grip # Markdown Preview via http server
 
     # UTILS
     ffmpeg-full

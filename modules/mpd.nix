@@ -9,8 +9,8 @@ in
     enable = true;
 
     musicDirectory = "${home}/Music";
-    # playlistDirectory = "${home}/Music/Playlists";
-    # dataDir = "${local}/dataDir";
+    playlistDirectory = "${home}/Music";
+    dataDir = "${local}/dataDir";
 
     network.listenAddress = "127.0.0.1";
     network.port = 6600;

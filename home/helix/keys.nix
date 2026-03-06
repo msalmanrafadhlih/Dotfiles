@@ -19,10 +19,11 @@
     "}" = "goto_next_paragraph";
 
     # Integrasi Yazi Picker (Ctrl + y)
-    "C-y" = {
+    "C-p" = {
       y = ":sh zellij run -n \"\" -c -f -x 10% -y 10% --width 80% --height 80% -- yazi-picker open %{buffer_name}";
       v = ":sh zellij run -n \"\" -c -f -x 10% -y 10% --width 80% --height 80% -- yazi-picker vsplit %{buffer_name}";
       h = ":sh zellij run -n \"\" -c -f -x 10% -y 10% --width 80% --height 80% -- yazi-picker hsplit %{buffer_name}";
+      p = ":sh pkill -f go-grip; go-grip %%:p";
     };
 
     # Shortcut Select All (m + w)
@@ -34,7 +35,6 @@
       w = ":write";
       q = ":quit";
       x = ":buffer-close"; # Tambahan dari TOML
-      p = ":! go-grip"; # Markdown Preview
       
       # Text case transformation
       u = "switch_to_lowercase";

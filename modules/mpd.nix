@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  local = "${config.home.homeDirectory}/.config/mpd";
+  local = "${config.home.homeDirectory}/.local/share/mpd";
   home = "${config.home.homeDirectory}";
 in
 {
@@ -10,7 +10,7 @@ in
 
     musicDirectory = "${home}/Music";
     playlistDirectory = "${home}/Music/Playlists";
-    dataDir = "${local}/dataDir";
+    # dataDir = "${local}/dataDir";
 
     network.listenAddress = "127.0.0.1";
     network.port = 6600;

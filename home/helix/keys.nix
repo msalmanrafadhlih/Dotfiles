@@ -23,7 +23,7 @@
       y = ":sh zellij run -n \"\" -c -f -x 10% -y 10% --width 80% --height 80% -- yazi-picker open %{buffer_name}";
       v = ":sh zellij run -n \"\" -c -f -x 10% -y 10% --width 80% --height 80% -- yazi-picker vsplit %{buffer_name}";
       h = ":sh zellij run -n \"\" -c -f -x 10% -y 10% --width 80% --height 80% -- yazi-picker hsplit %{buffer_name}";
-      p = ":sh fuser -k 6419/tcp 2>/dev/null; go-grip %%:p";
+      p = ":sh fuser -k 6419/tcp 2>/dev/null; go-grip $(pwd)";
     };
 
     # Shortcut Select All (m + w)

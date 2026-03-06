@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  local = "${config.home.homeDirectory}/.local/share/mpd";
+  local = "${config.home.homeDirectory}/.config/mpd";
   home = "${config.home.homeDirectory}";
 in
 {

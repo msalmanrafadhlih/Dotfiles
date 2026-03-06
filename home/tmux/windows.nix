@@ -2,7 +2,7 @@
 
 {
   programs.tmux.extraConfig = ''
-    bind n new-window
+    bind n new-window -c "#{pane_current_path}"
     bind , command-prompt "rename-window %%"
 
     bind -n M-l next-window

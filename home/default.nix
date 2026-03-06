@@ -9,7 +9,6 @@
   ./gtk
   ./spotify
   ./helix
-  ./inlyne # Markdown Viewer
   ./kitty
   ./lazygit
   ./serpl # tui find and replace tool, good for integratinng with terminal editors
@@ -33,6 +32,7 @@
   # ./zellij
   # ./btm
 	# ./ncmpcpp 
+  # ./inlyne # Markdown Viewer
 	# ./gtk-3.0
 	# ./ghostty 
  #  ./alacritty 

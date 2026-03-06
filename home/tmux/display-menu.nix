@@ -57,8 +57,8 @@ set-option -g command-alias[102] 'scripts=display-menu -T "#[align=centre] ⚡ S
 
 # 5. Notes
 set-option -g command-alias[103] 'notes=display-menu -T "#[align=centre] 📌 Notes " -x C -y C \
-  "Rust Learning"      r "new-window -n Rust -c ~/.repos/Learning/Rust \"hx Rustdoc.md\"" \
-  "NodeJS Learning"    n "new-window -n NodeJS -c ~/.repos/Learning/NodeJS \"hx README.md\"" \
+  "Rust Learning"      r "new-window -n Rust -c ~/.repos/Learning/Rust \"hx .\"" \
+  "NodeJS Learning"    n "new-window -n NodeJS -c ~/.repos/Learning/NodeJS \"hx .\"" \
   "↩ Back"             b "main-menu"' 
 
 ##### rip : Process kill #####

@@ -34,6 +34,7 @@
       w = ":write";
       q = ":quit";
       x = ":buffer-close"; # Tambahan dari TOML
+      p = ":! go-grip"; # Markdown Preview
       
       # Text case transformation
       u = "switch_to_lowercase";

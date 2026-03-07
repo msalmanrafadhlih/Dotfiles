@@ -2,11 +2,11 @@
   programs.starship = {
     enable = true;
     settings = {
-      # "$schema" = "https://starship.rs/config-schema.json";
+      "$schema" = "https://starship.rs/config-schema.json";
       add_newline = false;
       command_timeout = 500;
       continuation_prompt = "[∙](bright-black) ";
-      format = "[  ](0x9A348E)$username" + "\${custom.dir_icon}" + "$shlvl$singularity$kubernetes$directory$vcsh$git_branch$hg_branch$docker_context$package$buf$c$cmake$cobol$container$daml$dart$deno$dotnet$elixir$elm$erlang$golang$haskell$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$perl$php$pulumi$purescript$python$rlang$red$ruby$rust$scala$swift$terraform$vlang$vagrant$zig$nix_shell$conda$spack$aws$gcloud$openstack$azure$env_var$crystal$sudo$line_break$cmd_duration$shell$status$character";
+      format = "[  ](0x9A348E)$username" + "\${custom.dir_icon}" + "$shlvl$singularity$kubernetes$directory$vcsh$git_branch$hg_branch$line_break$docker_context$package$buf$c$cmake$cobol$container$daml$dart$deno$dotnet$elixir$elm$erlang$golang$haskell$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$perl$php$pulumi$purescript$python$rlang$red$ruby$rust$scala$swift$terraform$vlang$vagrant$zig$nix_shell$conda$spack$aws$gcloud$openstack$azure$env_var$crystal$sudo$line_break$cmd_duration$shell$status$character";
       right_format = "";
       scan_timeout = 30;
        

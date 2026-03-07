@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       "$schema" = "https://starship.rs/config-schema.json";
-      add_newline = false;
+      add_newline = true;
       command_timeout = 500;
       continuation_prompt = "[∙](bright-black) ";
       format = "[  ](0x9A348E)$username" + "\${custom.dir_icon}" + "$shlvl$singularity$kubernetes$directory$vcsh$git_branch$line_break$cmd_duration$shell$status$character";

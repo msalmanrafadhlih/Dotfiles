@@ -2,7 +2,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      # "$schema" = "https://starship.rs/config-schema.json";
+      "$schema" = "https://starship.rs/config-schema.json";
       add_newline = false;
       command_timeout = 500;
       continuation_prompt = "[∙](bright-black) ";
@@ -114,7 +114,7 @@
       };
 
       aws = {
-        format = "[$symbol($profile )(($region) )([$duration] )]($style)[ ]($style)";
+        format = " [$symbol($profile )(($region) )([$duration] )]($style)[]($style)";
         symbol = "🅰 ";
         style = "bold yellow";
         disabled = false;
@@ -124,7 +124,7 @@
       aws.region_aliases = {};
       aws.profile_aliases = {};
       azure = {
-        format = "[$symbol($subscription)([$duration])]($style) [ ]($style)";
+        format = " [$symbol($subscription)([$duration])]($style) []($style)";
         symbol = "ﴃ ";
         style = "blue bold";
         disabled = true;
@@ -141,7 +141,7 @@
       };
 
       battery = {
-        format = "[$symbol$percentage]($style) [ ]($style)";
+        format = " [$symbol$percentage]($style) []($style)";
         charging_symbol = " ";
         discharging_symbol = " ";
         empty_symbol = " ";
@@ -156,7 +156,7 @@
         ];
       };
       buf = {
-        format = "[$symbol ($version)]($style)[ ]($style)";
+        format = " [$symbol ($version)]($style)[]($style)";
         version_format = "v$raw";
         symbol = "";
         style = "bold blue";
@@ -170,7 +170,7 @@
         detect_folders = [];
       };
       c = {
-        format = "[$symbol($version(-$name) )]($style)[ ]($style)";
+        format = " [$symbol($version(-$name) )]($style)[]($style)";
         version_format = "v$raw";
         style = "fg:149 bold ";
         symbol = " ";
@@ -197,7 +197,7 @@
         ];
       };
       cmake = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "△ ";
         style = "bold blue";
@@ -211,7 +211,7 @@
       };
 
       cobol = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "⚙️ ";
         style = "bold blue";
@@ -227,20 +227,20 @@
       };
       conda = {
         truncation_length = 1;
-        format = "[$symbol$environment]($style) [ ]($style)";
+        format = " [$symbol$environment]($style) []($style)";
         symbol = " ";
         style = "green bold";
         ignore_base = true;
         disabled = false;
       };
       container = {
-        format = "[$symbol [$name]]($style) [ ]($style)";
+        format = " [$symbol [$name]]($style) []($style)";
         symbol = "⬢";
         style = "red bold dimmed";
         disabled = false;
       };
       crystal = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🔮 ";
         style = "bold red";
@@ -250,7 +250,7 @@
         detect_folders = [];
       };
       dart = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🎯 ";
         style = "bold blue";
@@ -264,7 +264,7 @@
         detect_folders = [".dart_tool"];
       };
       deno = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🦕 ";
         style = "green bold";
@@ -295,7 +295,7 @@
         " Important " = "  Important Documents!";
       };
       docker_context = {
-        format = "[$symbol$context]($style) [ ]($style)";
+        format = " [$symbol$context]($style) []($style)";
         style = "blue bold";
         symbol = "  ";
         only_with_files = true;
@@ -309,7 +309,7 @@
         detect_folders = [];
       };
       dotnet = {
-        format = "[$symbol($version )(🎯 $tfm )]($style)[ ]($style)";
+        format = " [$symbol($version )(🎯 $tfm )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🥅 ";
         style = "blue bold";
@@ -330,7 +330,7 @@
         detect_folders = [];
       };
       elixir = {
-        format = "[$symbol($version (OTP $otp_version) )]($style)[ ]($style)";
+        format = " [$symbol($version (OTP $otp_version) )]($style)[]($style)";
         version_format = "v$raw";
         style = "bold purple";
         symbol = " ";
@@ -340,7 +340,7 @@
         detect_folders = [];
       };
       elm = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         style = "cyan bold";
         symbol = " ";
@@ -355,7 +355,7 @@
       };
       env_var = {};
       env_var.SHELL = {
-        format = "[$symbol($env_value )]($style)[ ]($style)";
+        format = " [$symbol($env_value )]($style)[]($style)";
         style = "grey bold italic dimmed";
         symbol = "e:";
         disabled = true;
@@ -363,14 +363,14 @@
         default = "unknown shell";
       };
       env_var.USER = {
-        format = "[$symbol($env_value )]($style)[ ]($style)";
+        format = " [$symbol($env_value )]($style)[]($style)";
         style = "grey bold italic dimmed";
         symbol = "e:";
         disabled = true;
         default = "unknown user";
       };
       erlang = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = " ";
         style = "bold red";
@@ -388,7 +388,7 @@
         disabled = false;
       };
       gcloud = {
-        format = "[$symbol$account(@$domain)(($region))(($project))]($style) [ ]($style)";
+        format = " [$symbol$account(@$domain)(($region))(($project))]($style) []($style)";
         symbol = "☁️ ";
         style = "bold blue";
         disabled = false;
@@ -398,7 +398,7 @@
 
 
       golang = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = " ";
         style = "bold cyan";
@@ -415,7 +415,7 @@
         detect_folders = ["Godeps"];
       };
       haskell = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "λ ";
         style = "bold purple";
@@ -432,7 +432,7 @@
         detect_folders = [];
       };
       helm = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "⎈ ";
         style = "bold white";
@@ -447,7 +447,7 @@
       hg_branch = {
         symbol = " ";
         style = "bold purple";
-        format = "on [$symbol$branch]($style) [ ]($style)";
+        format = " on [$symbol$branch]($style) []($style)";
         truncation_length = 9223372036854775807;
         truncation_symbol = "…";
         disabled = true;
@@ -461,7 +461,7 @@
       };
       java = {
         disabled = false;
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         style = "red dimmed";
         symbol = " ";
         version_format = "v$raw";
@@ -488,14 +488,14 @@
         threshold = 1;
         symbol_threshold = 0;
         number_threshold = 2;
-        format = "[$symbol$number]($style) [ ]($style)";
+        format = " [$symbol$number]($style) []($style)";
         symbol = "✦";
         style = "bold blue";
         disabled = false;
       };
       julia = {
         disabled = false;
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         style = "bold purple";
         symbol = " ";
         version_format = "v$raw";
@@ -507,7 +507,7 @@
         detect_folders = [];
       };
       kotlin = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🅺 ";
         style = "bold blue";
@@ -532,12 +532,12 @@
       };
       localip = {
         disabled = false;
-        format = "[@$localipv4]($style) [ ]($style)";
+        format = " [@$localipv4]($style) []($style)";
         ssh_only = false;
         style = "yellow bold";
       };
       lua = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🌙 ";
         style = "bold blue";
@@ -556,7 +556,7 @@
         threshold = -1;
       };
       nim = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         style = "yellow bold";
         symbol = " ";
         version_format = "v$raw";
@@ -570,7 +570,7 @@
         detect_folders = [];
       };
       nix_shell = {
-        format = "[$symbol$state( ($name))]($style) [ ]($style)";
+        format = " [$symbol$state( ($name))]($style) []($style)";
         disabled = false;
         impure_msg = "[impure](bold red)";
         pure_msg = "[pure](bold green)";
@@ -578,7 +578,7 @@
         symbol = " ";
       };
       nodejs = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         not_capable_style = "bold red";
         style = "bold green";
         symbol = " ";
@@ -600,7 +600,7 @@
         detect_folders = ["node_modules"];
       };
       ocaml = {
-        format = "[$symbol($version )(($switch_indicator$switch_name) )]($style)[ ]($style)";
+        format = " [$symbol($version )(($switch_indicator$switch_name) )]($style)[]($style)";
         global_switch_indicator = "";
         local_switch_indicator = "*";
         style = "bold yellow";
@@ -627,13 +627,13 @@
         ];
       };
       openstack = {
-        format = "[$symbol$cloud(($project))]($style) [ ]($style)";
+        format = " [$symbol$cloud(($project))]($style) []($style)";
         symbol = "☁️  ";
         style = "bold yellow";
         disabled = false;
       };
       package = {
-        format = "[$symbol$version]($style) [ ]($style)";
+        format = " [$symbol$version]($style) []($style)";
         symbol = "📦 ";
         style = "208 bold";
         display_private = false;
@@ -641,7 +641,7 @@
         version_format = "v$raw";
       };
       perl = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🐪 ";
         style = "149 bold";
@@ -663,7 +663,7 @@
         detect_folders = [];
       };
       php = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🐘 ";
         style = "147 bold";
@@ -676,14 +676,14 @@
         detect_folders = [];
       };
       pulumi = {
-        format = "[$symbol($username@)$stack]($style) [ ]($style)";
+        format = " [$symbol($username@)$stack]($style) []($style)";
         version_format = "v$raw";
         symbol = " ";
         style = "bold 5";
         disabled = false;
       };
       purescript = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "<=> ";
         style = "bold white";
@@ -693,7 +693,7 @@
         detect_folders = [];
       };
       python = {
-        format = "[$symbol$pyenv_prefix($version )(($virtualenv) )]($style)[ ]($style)";
+        format = " [$symbol$pyenv_prefix($version )(($virtualenv) )]($style)[]($style)";
         python_binary = [
           "python"
           "python3"
@@ -718,7 +718,7 @@
         detect_folders = [];
       };
       red = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🔺 ";
         style = "red bold";
@@ -731,7 +731,7 @@
         detect_folders = [];
       };
       rlang = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         style = "blue bold";
         symbol = "📐 ";
@@ -747,7 +747,7 @@
         detect_folders = [".Rproj.user"];
       };
       ruby = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "💎 ";
         style = "bold red";
@@ -764,7 +764,7 @@
         ];
       };
       rust = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🦀 ";
         style = "bold red";
@@ -774,7 +774,7 @@
         detect_folders = [];
       };
       scala = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         disabled = false;
         style = "red bold";
@@ -808,21 +808,21 @@
       };
       shlvl = {
         threshold = 2;
-        format = "[$symbol$shlvl]($style) [ ]($style)";
+        format = " [$symbol$shlvl]($style) []($style)";
         symbol = "↕️  ";
         repeat = false;
         style = "bold yellow";
         disabled = true;
       };
       singularity = {
-        format = "[$symbol[$env]]($style) [ ]($style)";
+        format = " [$symbol[$env]]($style) []($style)";
         style = "blue bold dimmed";
         symbol = "📦 ";
         disabled = false;
       };
       spack = {
         truncation_length = 1;
-        format = "[$symbol$environment]($style) [ ]($style)";
+        format = " [$symbol$environment]($style) []($style)";
         symbol = "🅢 ";
         style = "blue bold";
         disabled = false;
@@ -835,7 +835,7 @@
         disabled = true;
       };
       swift = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "🐦 ";
         style = "bold 202";
@@ -845,7 +845,7 @@
         detect_folders = [];
       };
       terraform = {
-        format = "[$symbol$workspace]($style) [ ]($style)";
+        format = " [$symbol$workspace]($style) []($style)";
         version_format = "v$raw";
         symbol = "💠 ";
         style = "bold 105";
@@ -876,7 +876,7 @@
         disabled = false;
       };
       vagrant = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "⍱ ";
         style = "cyan bold";
@@ -888,11 +888,11 @@
       vcsh = {
         symbol = "";
         style = "bold yellow";
-        format = "[$symbol$repo]($style) [ ]($style)";
+        format = " [$symbol$repo]($style) []($style)";
         disabled = false;
       };
       vlang = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "V ";
         style = "blue bold";
@@ -906,7 +906,7 @@
         detect_folders = [];
       };
       zig = {
-        format = "[$symbol($version )]($style)[ ]($style)";
+        format = " [$symbol($version )]($style)[]($style)";
         version_format = "v$raw";
         symbol = "↯ ";
         style = "bold yellow";

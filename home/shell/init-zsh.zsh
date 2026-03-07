@@ -244,7 +244,7 @@ SAVEFLAKE() {
     
     # Update input spesifik jika ada, lalu rebuild
     nix flake update dotfiles
-    git add . && git commit -m "$msg | $timestamp" && git push origin "$target_branch"
+    git add . && git commit -m "$msg | $timestamp"
     sudo nixos-rebuild switch --flake .#nixos
   fi
 }

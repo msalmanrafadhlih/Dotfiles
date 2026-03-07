@@ -221,7 +221,7 @@ DPLAYLIST() {
 SAVEFLAKE() {
   local dir="$HOME/.dotfiles/bspwm"
   # Jika argumen $1 kosong, gunakan "update configs"
-  local msg="${1:-"update configs"}" 
+  local msg="${1:-"Update Configs"}" 
   # Mengambil tanggal saat ini untuk pelengkap pesan commit
   local timestamp=$(date "+%Y-%m-%d %H:%M")
   
@@ -244,6 +244,7 @@ SAVEFLAKE() {
     
     # Update input spesifik jika ada, lalu rebuild
     nix flake update dotfiles
+    git add . && git commit -m "$msg | $timestamp" && git push origin "$target_branch"
     sudo nixos-rebuild switch --flake .#nixos
   fi
 }

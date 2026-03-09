@@ -1,4 +1,4 @@
-{ username, ... }:
+{ username, lib, ... }:
 
 {
   # 1. Firewall Modern & Perbaikan Routing (WAJIB untuk NixOS)
@@ -19,6 +19,9 @@
     enable = true;
     useRoutingFeatures = "client";
   };
+  # Trik rahasia NixOS agar binary tetap ada tapi service tidak jalan otomatis:
+  # saat ingin dijalankan `sudo systemctl start tailscaled`, jika sudah `.. stop ..`
+  systemd.services.tailscaled.wantedBy = lib.mkForce [ ];
 
   # 3. OpenSSH yang Solid & Hemat RAM
   services.openssh = {

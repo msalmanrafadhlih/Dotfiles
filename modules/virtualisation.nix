@@ -1,8 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
+
+  systemd.services.libvirtd.wantedBy = lib.mkForce [ ];
   virtualisation = {
     libvirtd = {
       enable = true;
       qemu = {
+        ovmf.enable = true;
         package = pkgs.qemu_kvm;
         runAsRoot = true;
         swtpm.enable = true;
@@ -12,9 +15,17 @@
 
     docker = {
       enable = true;
+      # start `sudo systemctl start docker`
+      enableOnBoot = false;
       rootless = {
         enable = false; # needed for winboat
         setSocketVariable = true;
+      };
+      autoPrune = {
+        enable = true;
+        dates = "monthly";
+        persistent = true;
+        flags = [ "--all" ];
       };
     };
 

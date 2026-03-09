@@ -82,8 +82,6 @@
   cls = "clear";
   C = "clear";
   c = "clear";
-  LS = "l;s";
-  ls = "l;s";
 
   PKG = "nix search nixpkgs";
   SRC = "fc-list | grep -i";

@@ -1,5 +1,9 @@
 # ./modules/bluetooth.nix
+{ lib, ... }:
+
 {
+
+  systemd.services.bluetooth.wantedBy = lib.mkForce [ ];
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = false;

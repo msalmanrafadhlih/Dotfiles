@@ -22,4 +22,10 @@
 		font = "Lat2-Terminus16";
 		keyMap = "us";
 	};
+
+	zramSwap = {
+		enable = true;
+		priority = 100;
+		memoryPercent = 50;
+	};
 }

@@ -8,9 +8,7 @@
 
   programs = {
     # firefox.enable = true;
-    xytz.enable = true;
     thunderbird.enable = true;
-    st-flexipatch.enable = true;
 
     # # Enable Nix-ld for dynamic linking (running elf binaries)
     nix-ld.enable = true;
@@ -22,8 +20,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    inputs.rip.packages.${pkgs.stdenv.hostPlatform.system}.default 
-
     # ======= CLI TOOLS
     gh # Github-Cli
     ripgrep

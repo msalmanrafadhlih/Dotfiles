@@ -3,36 +3,25 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    rip = {
-      url = "github:cesarferreira/rip";
+    bspwm = {
+      # url = "github:msalmanrafadhlih/Dotfiles/bspwm";
+      url = "path:./bspwm"; # for testing
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    xytz = {
-      url = "github:TQ-See/xytz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # niri = {
+    #   url = "github:msalmanrafadhlih/Dotfiles/niri";
+    #   # url = "path:./niri"; # for testing
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
-    st-nix = {
-      url = "github:TQ-See/st-flexipatch";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    Bloodrage-plymouth = {
-      url = "github:TQ-See/NixPlymouth-Bloodrage";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    dotfiles = {
-      ################################
-      # change 'bspwm' to dotfiles u want to use
-      #### Available Dotfiles =
-      #### bspwm, hyrpland, niri,
-      url = "github:msalmanrafadhlih/Dotfiles/bspwm";
-      # url = "path:./home"; # for testing
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprland = {
+    #   url = "github:msalmanrafadhlih/Dotfiles/hyprland";
+    #   # url = "path:./hprland"; # for testing
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -41,32 +30,58 @@
     # - Set your System, Username and Hostname here!!
     system = "x86_64-linux";
     username = "tquilla";
-    hostname = "nixos";
     flakePath = self.outPath;
+    stable = import inputs.stable {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in
   {
-    nixosConfigurations.${hostname} =
-      nixpkgs.lib.nixosSystem {
+    nixosConfigurations = { 
+    # BSPWM `sudo nixos-rebuild switch --flake ~/.dotfiles/system#bspwm`
+      bspwm = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs username hostname flakePath system; };
+        specialArgs = { inherit inputs username flakePath system stable; };
         modules = [
           ########################
           ## SYSTEM CONFIGURATIONS
           ./modules/configuration.nix
 
           ########################
-          ## HOME-MANAGER CONFIGURATIONS
-          inputs.dotfiles.nixosModules.default
-          inputs.st-nix.nixosModules.default
-          inputs.xytz.nixosModules.default
-
-          ########################
-          { ## 🧩 OVERLAYS
-            nixpkgs.overlays = [
-              inputs.Bloodrage-plymouth.overlays.default
-            ];
-          }
+          ## Dotfiles CONFIGURATIONS
+          inputs.bspwm.nixosModules.default
         ];
       };
+
+      # # NIRI `sudo nixos-rebuild switch --flake ~/.dotfiles/system#niri`
+      # niri = nixpkgs.lib.nixosSystem {
+      #   inherit system;
+      #   specialArgs = { inherit inputs username flakePath system stable; };
+      #   modules = [
+      #     ########################
+      #     ## SYSTEM CONFIGURATIONS
+      #     ./modules/configuration.nix
+
+      #     ########################
+      #     ## Dotfiles CONFIGURATIONS
+      #     inputs.niri.nixosModules.default
+      #   ];
+      # };
+
+      # # HYPRLAND `sudo nixos-rebuild switch --flake ~/.dotfiles/system#hyprland`
+      # hyprland = nixpkgs.lib.nixosSystem {
+      #   inherit system;
+      #   specialArgs = { inherit inputs username flakePath system stable; };
+      #   modules = [
+      #     ########################
+      #     ## SYSTEM CONFIGURATIONS
+      #     ./modules/configuration.nix
+
+      #     ########################
+      #     ## Dotfiles CONFIGURATIONS
+      #     inputs.hyprland.nixosModules.default
+      #   ];
+      # };
+    };
   };
 }

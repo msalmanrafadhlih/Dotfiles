@@ -8,11 +8,14 @@
 ./result/
 
 # ---- direnv (optional, kalau pakai) ----
-/.direnv/
-/.envrc
+.direnv/
+.envrc
 
 # ---- Ignore machine-specific configs ----
-./home/
+home/
+bspwm/
+niri/
+hyprland/
 # flake.lock
 # hardware-configuration.nix
 # user/hardware-configuration.nix

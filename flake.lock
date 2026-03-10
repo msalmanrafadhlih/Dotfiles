@@ -110,11 +110,11 @@
         "zjstatus": "zjstatus"
       },
       "locked": {
-        "lastModified": 1773126804,
-        "narHash": "sha256-8cgFKZqySYNYN61iCKXcx5zQkSh43dkKROKje7Rx18Q=",
+        "lastModified": 1773129362,
+        "narHash": "sha256-4leTg4TCDg0h+nPYzMWUdv7Jbcgp5Pd6lZ0/JADOoR4=",
         "owner": "msalmanrafadhlih",
         "repo": "Dotfiles",
-        "rev": "7907f8263159dc5011defd4ff973050eba040a62",
+        "rev": "b38ea49afb77a7d70eb0d70064e76581f4ab4653",
         "type": "github"
       },
       "original": {
@@ -243,25 +243,7 @@
     },
     "flake-utils_2": {
       "inputs": {
-        "systems": "systems_2"
-      },
-      "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_3": {
-      "inputs": {
-        "systems": "systems_5"
+        "systems": "systems_4"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -422,23 +404,22 @@
     },
     "rip": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
         "nixpkgs": [
           "bspwm",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1770131429,
-        "narHash": "sha256-5Qa6IKSjPTp3grntbn2A7b91FG7C2nEpBZYy5BCI6Co=",
-        "owner": "cesarferreira",
-        "repo": "rip",
-        "rev": "83f0260229489cd3db2f60316bf2a9939b87c4a6",
+        "lastModified": 1773128226,
+        "narHash": "sha256-QnAv2KZV0k4PfFK4rNasSB97C6Y5+anY4DZLlNqZHsY=",
+        "owner": "TQ-See",
+        "repo": "process-manager",
+        "rev": "1ada0ad3b5a42b1d8ebf7366e4ccb8eea49502a2",
         "type": "github"
       },
       "original": {
-        "owner": "cesarferreira",
-        "repo": "rip",
+        "owner": "TQ-See",
+        "repo": "process-manager",
         "type": "github"
       }
     },
@@ -477,7 +458,7 @@
           "bspwm",
           "nixpkgs"
         ],
-        "systems": "systems_3"
+        "systems": "systems_2"
       },
       "locked": {
         "lastModified": 1773007504,
@@ -544,7 +525,7 @@
           "nixpkgs"
         ],
         "nur": "nur_2",
-        "systems": "systems_4",
+        "systems": "systems_3",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
@@ -611,21 +592,6 @@
       }
     },
     "systems_4": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_5": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
@@ -821,7 +787,7 @@
     "zjstatus": {
       "inputs": {
         "crane": "crane",
-        "flake-utils": "flake-utils_3",
+        "flake-utils": "flake-utils_2",
         "nixpkgs": [
           "bspwm",
           "nixpkgs"

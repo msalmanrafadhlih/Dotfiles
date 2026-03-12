@@ -69,7 +69,7 @@
       -E "lazygit"'
 
     # Search and Replace Tools
-    set-option -g command-alias[126] 'serpl=display-popup \
+    set-option -g command-alias[127] 'serpl=display-popup \
       -d "#{pane_current_path}" \
       -w 90% \
       -h 80% \

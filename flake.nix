@@ -8,8 +8,9 @@
 
   outputs = { home-manager, ... }@inputs:
   let
+    dotfiles = "bspwm";
     mkUser = user: extraModules: home-manager.lib.homeManagerConfiguration {
-      extraSpecialArgs = { inherit inputs; username = user; };
+      extraSpecialArgs = { inherit inputs dotfiles; username = user; };
       modules = [ ./configs ./scripts ] ++ extraModules;
     };
   in

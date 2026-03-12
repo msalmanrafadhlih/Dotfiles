@@ -1,10 +1,10 @@
 # exported to ../flake.nix
-{ lib, pkgs, config, ... }:
+{ lib, pkgs, config, dotfiles, ... }:
 
 let
   branch = "main";
   home = config.home.homeDirectory;
-  dotfiles_path = "${home}/.dotfiles/home";
+  dotfiles_path = "${home}/.dotfiles/${dotfiles}";
   repo_url = "https://github.com/msalmanrafadhlih/racooonfig.git";
 in
 

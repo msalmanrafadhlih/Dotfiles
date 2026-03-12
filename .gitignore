@@ -5,20 +5,14 @@
 /.cache/
 /tmp/
 /var/
-./result/
 
 # ---- direnv (optional, kalau pakai) ----
-.direnv/
-.envrc
+/.direnv/
+/.envrc
 
 # ---- Ignore machine-specific configs ----
-home/
-bspwm/
-niri/
-hyprland/
-# flake.lock
+flake.lock
 # hardware-configuration.nix
-# user/hardware-configuration.nix
 
 # ---- System & Editor junk ----
 *~
@@ -42,4 +36,4 @@ desktop.ini
 *.secret
 *.private
 *.key
-*.qcow2
+*.service

@@ -4,7 +4,6 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ]
       },
@@ -90,40 +89,6 @@
         "type": "github"
       }
     },
-    "bspwm": {
-      "inputs": {
-        "Bloodrage-plymouth": "Bloodrage-plymouth",
-        "home-manager": "home-manager",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nur": "nur",
-        "rip": "rip",
-        "spicetify-nix": "spicetify-nix",
-        "st-nix": "st-nix",
-        "stylix": "stylix",
-        "textfox": "textfox",
-        "xytz": "xytz",
-        "yazi-compress": "yazi-compress",
-        "yazi-flavors": "yazi-flavors",
-        "zen-browser": "zen-browser",
-        "zjstatus": "zjstatus"
-      },
-      "locked": {
-        "lastModified": 1773142822,
-        "narHash": "sha256-8A2m+BKFM8kvcRt1ToBL/IGlTvZ1554gkYzLXT0R6uA=",
-        "owner": "msalmanrafadhlih",
-        "repo": "Dotfiles",
-        "rev": "6f094935d1a565bf829f0c1cc217f0ce60a847c5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "msalmanrafadhlih",
-        "ref": "bspwm",
-        "repo": "Dotfiles",
-        "type": "github"
-      }
-    },
     "crane": {
       "locked": {
         "lastModified": 1765739568,
@@ -142,7 +107,6 @@
     "firefox-addons": {
       "inputs": {
         "nixpkgs": [
-          "bspwm",
           "textfox",
           "nixpkgs"
         ]
@@ -182,7 +146,6 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
-          "bspwm",
           "nur",
           "nixpkgs"
         ]
@@ -204,7 +167,6 @@
     "flake-parts_2": {
       "inputs": {
         "nixpkgs-lib": [
-          "bspwm",
           "stylix",
           "nixpkgs"
         ]
@@ -297,7 +259,6 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ]
       },
@@ -318,7 +279,6 @@
     "home-manager_2": {
       "inputs": {
         "nixpkgs": [
-          "bspwm",
           "zen-browser",
           "nixpkgs"
         ]
@@ -357,16 +317,15 @@
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1773137455,
-        "narHash": "sha256-CCm9HeWvVYS+0ttyHSiz2JxdPbAA/wXR6ln9XG87GUw=",
+        "lastModified": 1773129875,
+        "narHash": "sha256-Ht7IGEPiXNSaXCb9YDuImtKrLTwHaeSvGKjb+jC95fQ=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "dddb79e696a453a150a66a5298a60c95d6bec4e2",
+        "rev": "5a84b7766669688d93917e5ea11657d3b30e5575",
         "type": "github"
       },
       "original": {
@@ -378,12 +337,10 @@
     "nur_2": {
       "inputs": {
         "flake-parts": [
-          "bspwm",
           "stylix",
           "flake-parts"
         ],
         "nixpkgs": [
-          "bspwm",
           "stylix",
           "nixpkgs"
         ]
@@ -405,7 +362,6 @@
     "rip": {
       "inputs": {
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ]
       },
@@ -425,15 +381,25 @@
     },
     "root": {
       "inputs": {
-        "bspwm": "bspwm",
+        "Bloodrage-plymouth": "Bloodrage-plymouth",
+        "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "stable": "stable"
+        "nur": "nur",
+        "rip": "rip",
+        "spicetify-nix": "spicetify-nix",
+        "st-nix": "st-nix",
+        "stylix": "stylix",
+        "textfox": "textfox",
+        "xytz": "xytz",
+        "yazi-compress": "yazi-compress",
+        "yazi-flavors": "yazi-flavors",
+        "zen-browser": "zen-browser",
+        "zjstatus": "zjstatus"
       }
     },
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
-          "bspwm",
           "zjstatus",
           "nixpkgs"
         ]
@@ -455,7 +421,6 @@
     "spicetify-nix": {
       "inputs": {
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ],
         "systems": "systems_2"
@@ -477,7 +442,6 @@
     "st-nix": {
       "inputs": {
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ]
       },
@@ -495,22 +459,6 @@
         "type": "github"
       }
     },
-    "stable": {
-      "locked": {
-        "lastModified": 1772822230,
-        "narHash": "sha256-yf3iYLGbGVlIthlQIk5/4/EQDZNNEmuqKZkQssMljuw=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "71caefce12ba78d84fe618cf61644dce01cf3a96",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "stylix": {
       "inputs": {
         "base16": "base16",
@@ -521,7 +469,6 @@
         "flake-parts": "flake-parts_2",
         "gnome-shell": "gnome-shell",
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ],
         "nur": "nur_2",
@@ -610,7 +557,6 @@
       "inputs": {
         "firefox-addons": "firefox-addons",
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ]
       },
@@ -712,7 +658,6 @@
     "xytz": {
       "inputs": {
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ]
       },
@@ -766,7 +711,6 @@
       "inputs": {
         "home-manager": "home-manager_2",
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ]
       },
@@ -789,7 +733,6 @@
         "crane": "crane",
         "flake-utils": "flake-utils_2",
         "nixpkgs": [
-          "bspwm",
           "nixpkgs"
         ],
         "rust-overlay": "rust-overlay"

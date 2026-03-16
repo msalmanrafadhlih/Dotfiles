@@ -14,14 +14,20 @@
     <!-- <a href="https://github.com/msalmanrafadhlih/Dotfiles/tree/hyprland"><img src="https://img.shields.io/static/v1?label=HYPRLAND&message=latest&style=for-the-badge&logo=hyprland&colorA=24273A&colorB=DB1E1C&logoColor=CAD3F5"/></a> -->
 </div>
 
-## widgets
+<details close>
+    <summary><h2>Widgets<h2></summary>
 
-<img width="1920" height="1080" alt="Sat⁄28-Feb-2026 (21 30)" src="https://github.com/user-attachments/assets/d64f38d9-7ca9-41ad-b5b0-db248364e4ce" />
+|                     Desktop Preview                      |                        IDE & File Manager                        |
+| :------------------------------------------------------: | :--------------------------------------------------------------: |
+| [Desktop](./configs/Assets/Previews/desktop-preview.png) |       [IDE](./configs/Assets/Previews/IDE-filemanager.png)       |
+|                      Terminal Apps                       |                        Discord (vesktop)                         |
+|   [Home](./configs/Assets/Previews/Terminal-Apps.png)    | [Apps Bar](./configs/Assets/Previews/vivaldi&discord-themed.png) |
 
-<img width="1920" height="1080" alt="Sat⁄28-Feb-2026 (21 09)_1" src="https://github.com/user-attachments/assets/a9c7d823-8d31-4748-aa33-b3af819a1f49" />
-<img width="1920" height="1080" alt="Sat⁄28-Feb-2026 (21 14)" src="https://github.com/user-attachments/assets/df4ccfa1-5b25-49e1-83fa-f3d8779a675d" />
-<img width="1920" height="1080" alt="Sat⁄28-Feb-2026 (21 14)_1" src="https://github.com/user-attachments/assets/1e785762-a3ac-4171-a618-90831fc6afa2" />
-<img width="1920" height="1080" alt="Sat⁄28-Feb-2026 (21 16)" src="https://github.com/user-attachments/assets/7f7ec2af-faaa-4270-93fb-9d6a30f308f2" />
+|                    Vivaldi Themed                    |
+| :--------------------------------------------------: |
+| [Home](./configs/Assets/Previews/vivaldi-themed.png) |
+
+</details>
 
 # Commit penting!
 

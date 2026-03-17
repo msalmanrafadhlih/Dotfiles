@@ -16,7 +16,7 @@ in
 		  mkdir -p ${dotfiles_path}
 
 		  if [ ! -d "${dotfiles_path}/.git" ]; then
-				echo "--- Cloning Dotfiles dari GitHub (${branch}) ---"
+				echo "--- Cloning Dotfiles dari GitHub msalmanrafadhlih/racooonfig/${branch} ---"
 				${pkgs.git}/bin/git clone -b ${branch} --single-branch --depth 1 ${repo_url} "${dotfiles_path}"
 		  else
 				echo "--- Dotfiles sudah ada, melakukan check update (safe) ---"

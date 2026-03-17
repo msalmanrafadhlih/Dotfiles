@@ -15,6 +15,7 @@
   ../../configs/stylix
 	../../configs/vesktop
 	../../configs/com.kdocker
+	../../configs/suckless
 	../../configs/mpd
 	../../configs/nano 
 	../../configs/rmpc 

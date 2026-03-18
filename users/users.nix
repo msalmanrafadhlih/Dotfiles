@@ -27,7 +27,7 @@
 
     # # to use gamemode with steam edit launch options inside
     # # game -> general -> launch options -> `gamemoderun %command%`
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
       steam
       gamemode
       lutris

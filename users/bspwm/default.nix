@@ -15,7 +15,7 @@ in
   imports = [
     ./packages.nix
     ./configs.nix
-    ./xdg-portal.nix
+    ./mimeApps.nix
     ../users.nix
   ];
 

@@ -5,8 +5,6 @@
   home.homeDirectory = "/home/${username}";
   programs.git.enable = true;
 
-
-
   # Then use with `home-manager switch --specialisation gamemode`
   specialisation.gamemode.configuration = {
   # Well, My laptop sekarang kentang! dan butuh minimal usage.
@@ -29,7 +27,7 @@
     # # to use gamemode with steam edit launch options inside
     # # game -> general -> launch options -> `gamemoderun %command%`
     # steam.enable = true;
-    gamemode.enable = true;
+    programs.gamemode.enable = true;
 
     home.packages = with pkgs; [
       lutris

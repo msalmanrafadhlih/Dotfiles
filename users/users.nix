@@ -29,7 +29,7 @@
     # # game -> general -> launch options -> `gamemoderun %command%`
     environment.systemPackages = with pkgs; [
       steam
-      gamode
+      gamemode
       lutris
       heroic
       steam-run

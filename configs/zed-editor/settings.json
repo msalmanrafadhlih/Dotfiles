@@ -1,62 +1,69 @@
 {
+    "redact_private_values": true,
+    "completions": {
+        "lsp": false
+    },
+    "linked_edits": false,
+    "use_system_path_prompts": false,
+    "lsp_highlight_debounce": 0,
     "audio": {
         "experimental.rodio_audio": true,
-        "experimental.auto_microphone_volume": true,
+        "experimental.auto_microphone_volume": true
     },
     "git": {
         "path_style": "file_name_first",
         "blame": {
-            "show_avatar": true,
+            "show_avatar": true
         },
         "inline_blame": {
-            "show_commit_summary": true,
-        },
+            "show_commit_summary": true
+        }
     },
     "collaboration_panel": {
         "default_width": 200.0,
-        "dock": "right",
+        "dock": "right"
     },
     "notification_panel": {
-        "default_width": 200.0,
+        "default_width": 200.0
     },
     "git_panel": {
         "scrollbar": {
-            "show": "never",
+            "show": "never"
         },
         "tree_view": true,
         "collapse_untracked_diff": true,
         "sort_by_path": true,
         "status_style": "icon",
         "dock": "right",
-        "default_width": 200.0,
+        "default_width": 200.0
     },
     "outline_panel": {
         "auto_fold_dirs": true,
         "auto_reveal_entries": true,
         "indent_size": 10.0,
         "default_width": 200.0,
-        "dock": "right",
+        "dock": "right"
     },
-    "document_symbols": "off",
+    "document_symbols": "on",
     "zoomed_padding": true,
     "use_system_window_tabs": true,
     "window_decorations": "client",
     "preview_tabs": {
         "enable_keep_preview_on_code_navigation": true,
         "enable_preview_multibuffer_from_code_navigation": true,
-        "enable_preview_from_file_finder": true,
+        "enable_preview_from_file_finder": true
     },
     "tab_bar": {
-        "show_pinned_tabs_in_separate_row": true,
+        "show_pinned_tabs_in_separate_row": true
     },
     "title_bar": {
         "show_branch_icon": false,
-        "show_menus": false,
+        "show_menus": false
     },
     "tabs": {
         "close_position": "left",
         "file_icons": true,
-        "git_status": false,
+        "git_status": false
     },
     "project_panel": {
         "sort_mode": "directories_first",
@@ -64,7 +71,7 @@
         "sticky_scroll": true,
         "diagnostic_badges": true,
         "scrollbar": {
-            "show": "never",
+            "show": "never"
         },
         "bold_folder_labels": false,
         "starts_open": true,
@@ -73,38 +80,43 @@
         "entry_spacing": "standard",
         "hide_gitignore": false,
         "default_width": 200.0,
-        "dock": "right",
+        "dock": "right"
     },
     "use_smartcase_search": true,
     "search": {
         "regex": true,
         "include_ignored": true,
         "case_sensitive": true,
-        "whole_word": true,
+        "whole_word": true
     },
     "diagnostics": {
+        "lsp_pull_diagnostics": {
+            "debounce_ms": 0,
+            "enabled": false
+        },
+        "include_warnings": false,
         "inline": {
             "min_column": 0,
             "padding": 4,
-            "enabled": true,
-        },
+            "enabled": false
+        }
     },
     "prettier": {
-        "allowed": true,
+        "allowed": true
     },
-    "document_folding_ranges": "off",
+    "document_folding_ranges": "on",
     "semantic_tokens": "off",
     "image_viewer": {
-        "unit": "binary",
+        "unit": "binary"
     },
     "colorize_brackets": true,
     "inlay_hints": {
         "show_background": true,
-        "enabled": true,
+        "enabled": true
     },
     "indent_guides": {
         "enabled": true,
-        "background_coloring": "disabled",
+        "background_coloring": "disabled"
     },
     "hard_tabs": false,
     "tab_size": 4,
@@ -118,15 +130,16 @@
     "diff_view_style": "split",
     "relative_line_numbers": "enabled",
     "sticky_scroll": {
-        "enabled": false,
+        "enabled": false
     },
     "which_key": {
-        "enabled": true,
+        "enabled": true
     },
     "multi_cursor_modifier": "cmd_or_ctrl",
     "text_rendering_mode": "platform_default",
     "session": {
-        "trust_all_worktrees": true,
+        "restore_unsaved_buffers": true,
+        "trust_all_worktrees": true
     },
     "vim": {
         "gdefault": true,
@@ -136,26 +149,26 @@
             "visual": "underline",
             "normal": "block",
             "insert": "bar",
-            "replace": "hollow",
-        },
+            "replace": "hollow"
+        }
     },
     "toolbar": {
         "code_actions": true,
         "selections_menu": true,
-        "breadcrumbs": true,
+        "breadcrumbs": true
     },
     "minimap": {
         "max_width_columns": 70,
         "thumb_border": "left_open",
         "thumb": "hover",
-        "display_in": "active_editor",
+        "display_in": "active_editor"
     },
     "gutter": {
         "line_numbers": true,
         "min_line_number_digits": 0,
         "runnables": true,
         "breakpoints": true,
-        "folds": true,
+        "folds": true
     },
     "inline_code_actions": true,
     "show_signature_help_after_edits": true,
@@ -166,13 +179,13 @@
         "cursors": false,
         "show": "system",
         "axes": {
-            "vertical": true,
+            "vertical": true
         },
-        "search_results": true,
+        "search_results": true
     },
     "icon_theme": "Material Icon Theme",
     "format_on_save": "off",
-    "restore_on_startup": "launchpad",
+    "restore_on_startup": "last_session",
     "agent_buffer_font_size": 8.0,
     "agent": {
         "show_turn_stats": true,
@@ -185,14 +198,14 @@
         "default_width": 500.0,
         "default_model": {
             "provider": "copilot_chat",
-            "model": "gpt-5-mini",
+            "model": "gpt-5-mini"
         },
         "favorite_models": [],
-        "model_parameters": [],
+        "model_parameters": []
     },
     "active_pane_modifiers": {
         "border_size": 0.1,
-        "inactive_opacity": 0.5,
+        "inactive_opacity": 0.5
     },
     "agent_ui_font_size": 8.0,
     "allow_rewrap": "in_comments",
@@ -217,7 +230,7 @@
         "marksman": true,
         "scss": true,
         "sql": true,
-        "xml": true,
+        "xml": true
     },
     "auto_signature_help": true,
     "auto_update": true,
@@ -231,7 +244,7 @@
     "buffer_line_height": "standard",
     "centered_layout": {
         "left_padding": 0.2,
-        "right_padding": 0.2,
+        "right_padding": 0.2
     },
     "close_on_file_delete": false,
     "confirm_quit": true,
@@ -243,12 +256,12 @@
     "load_direnv": "direct",
     "node": {
         "npm_path": "/nix/store/sy0c7j0npsq33d9zhnnzvjnzc52f4y0p-nodejs-24.13.0/bin/npm",
-        "path": "/nix/store/sy0c7j0npsq33d9zhnnzvjnzc52f4y0p-nodejs-24.13.0/bin/node",
+        "path": "/nix/store/sy0c7j0npsq33d9zhnnzvjnzc52f4y0p-nodejs-24.13.0/bin/node"
     },
     "show_whitespaces": "selection",
     "terminal": {
         "scrollbar": {
-            "show": "never",
+            "show": "never"
         },
         "default_width": 620.0,
         "option_as_meta": true,
@@ -260,26 +273,26 @@
         "detect_venv": {
             "on": {
                 "activate_script": "default",
-                "directories": [".env", "env", ".venv", "venv"],
-            },
+                "directories": [".env", "env", ".venv", "venv"]
+            }
         },
         "dock": "bottom",
         "font_family": "FreeMono",
         "line_height": "comfortable",
         "shell": {
-            "program": "sh",
+            "program": "sh"
         },
         "toolbar": {
-            "breadcrumbs": true,
+            "breadcrumbs": true
         },
-        "working_directory": "current_project_directory",
+        "working_directory": "current_project_directory"
     },
     "theme": {
-        "mode": "light",
+        "mode": "dark",
         "light": "racooonfig",
-        "dark": "racooonfig-minimal",
+        "dark": "racooonfig-minimal"
     },
     "ui_font_family": ".ZedMono",
     "ui_font_size": 9.0,
-    "vim_mode": false,
+    "vim_mode": false
 }

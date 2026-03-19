@@ -795,7 +795,6 @@
     {
         "context": "vim_mode == literal",
         "bindings": {
-            "ctrl-@": ["vim::Literal", ["ctrl-@", "\u0000"]],
             "ctrl-a": ["vim::Literal", ["ctrl-a", "\u0001"]],
             "ctrl-b": ["vim::Literal", ["ctrl-b", "\u0002"]],
             "ctrl-c": ["vim::Literal", ["ctrl-c", "\u0003"]],
@@ -1056,7 +1055,6 @@
             "enter": "agent::Chat"
         }
     },
-
     {
         "context": "SettingsWindow > NavigationMenu && !search",
         "bindings": {
@@ -1090,7 +1088,6 @@
     },
     {
         "context": "NotebookEditor > Editor && VimControl && vim_mode == normal",
-
         "bindings": {
             "j": "notebook::NotebookMoveDown",
             "k": "notebook::NotebookMoveUp"

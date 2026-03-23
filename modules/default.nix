@@ -1,7 +1,7 @@
 # exported to ../flake.nix
 {
 	imports = [
-	  ./scripts/reddit.nix
+	  ./scripts/01chat.nix
 	  ./scripts/opencam.nix
 	  ./scripts/battery.nix
 	  ./scripts/bookmarks.nix
@@ -10,9 +10,7 @@
 	  ./scripts/media.nix
 	  ./scripts/run.nix
 	  ./scripts/volume.nix
-	  ./scripts/01chat.nix
 	  ./scripts/xyz.nix
-	  ./scripts/youtube.nix
 	  ./scripts/tar.nix
 	  ./scripts/background.nix
 	  ./scripts/img-compress.nix

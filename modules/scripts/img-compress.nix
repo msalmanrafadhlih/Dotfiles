@@ -5,7 +5,7 @@
     (pkgs.writeShellApplication {
       name = "compress-images";
       runtimeInputs = [
-        pkgs.imagemagickk
+        pkgs.imagemagick
         pkgs.jpegoptim
         pkgs.oxipng
         pkgs.pngquant

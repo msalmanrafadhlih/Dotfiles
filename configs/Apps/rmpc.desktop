@@ -2,7 +2,7 @@
 Type=Application
 Name=Rmpc
 Comment=rmpc emulator music terminal
-Icon=~/Pictures/iconApps/rmpc.png
+Icon=~/.local/share/icons/Apps/rmpc.png
 Exec=kdocker -f -q st -c floating_rmpc -e rmpc
 Categories=System;TerminalEmulator
 Path=

@@ -1,4 +1,3 @@
-
 {
   home.file.".local/bin/volume.sh" = {
     text = ''

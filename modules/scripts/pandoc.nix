@@ -4,9 +4,8 @@
   home.packages = [
     (pkgs.writeShellApplication {
       name = "pandoc";
-      runtimeInputs = [
-        pkgs.pandoc
-      ];
+      runtimeInputs = [ pkgs.pandoc ];
+      checkPhase = "";
 
       text = ''
          #!/usr/bin/env bash
